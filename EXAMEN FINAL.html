@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Cálculo Geométrico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .panel-control {
+            width: 250px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-right: 1px solid #ddd;
+        }
+        .panel-principal {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .panel-grafico {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            overflow-y: auto;
+            max-height: 60vh;
+        }
+        .area-resultados {
+            height: 200px;
+            padding: 15px;
+            border-top: 1px solid #ddd;
+            overflow-y: auto;
+            background-color: #fafafa;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        .panel-control button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .panel-control button:hover {
+            background-color: #0069d9;
+        }
+        .panel-control input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .figura-container {
+            width: 150px;
+            height: 150px;
+            border: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            border-radius: 4px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .canvas-container {
+            width: 120px;
+            height: 120px;
+            position: relative;
+        }
+        .figura-titulo {
+            font-size: 12px;
+            text-align: center;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        canvas {
+            border: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Cálculo de Perímetros y Áreas de Figuras Geométricas</h1>
+    
+    <div class="container">
+        <div class="panel-control">
+            <h3>Panel de Control</h3>
+            <label for="valores">Ingrese valores separados por comas:</label>
+            <input type="text" id="valores" placeholder="Ej: 5,5,5,4,4,6,3,4,5">
+            <button id="btnProcesar">Procesar Datos</button>
+            <button id="btnOrdenarAreas">Ordenar Áreas (Ascendente)</button>
+            <button id="btnOrdenarPerimetros">Ordenar Perímetros (Descendente)</button>
+            <button id="btnEstadisticas">Mostrar Estadísticas</button>
+        </div>
+        
+        <div class="panel-principal">
+            <div class="panel-grafico" id="panelGrafico">
+                <!-- Aquí se mostrarán las figuras -->
+            </div>
+            
+            <div class="area-resultados" id="areaResultados">
+                <!-- Aquí se mostrarán los resultados -->
+                Bienvenido al Sistema de Cálculo Geométrico.
+                
+                Instrucciones:
+                1. Ingrese valores numéricos separados por comas en el campo de texto.
+                2. Cada tres valores formarán una terna para ser analizada.
+                3. Presione "Procesar Datos" para ver los resultados.
+                4. Use los otros botones para ordenar y ver estadísticas.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Clases y funciones principales del sistema
+
+        // Clase Terna
+        class Terna {
+            constructor(v1, v2, v3) {
+                this.valor1 = v1;
+                this.valor2 = v2;
+                this.valor3 = v3;
+            }
+            
+            tipoTerna() {
+                if (this.valor1 === this.valor2 && this.valor2 === this.valor3) {
+                    return "TRES_IGUALES";
+                } else if (this.valor1 === this.valor2 || this.valor2 === this.valor3 || this.valor1 === this.valor3) {
+                    return "DOS_IGUALES";
+                } else {
+                    return "TODOS_DIFERENTES";
+                }
+            }
+        }
+
+        // Clase base Figura
+        class Figura {
+            constructor(nombre) {
+                this.nombre = nombre;
+            }
+            
+            calcularArea() {
+                return 0;
+            }
+            
+            calcularPerimetro() {
+                return 0;
+            }
+            
+            dibujar(canvas) {
+                // Implementado en clases derivadas
+            }
+        }
+
+        // Clase Cuadrado
+        class Cuadrado extends Figura {
+            constructor(lado) {
+                super("Cuadrado");
+                this.lado = lado;
+            }
+            
+            calcularArea() {
+                return this.lado * this.lado;
+            }
+            
+            calcularPerimetro() {
+                return 4 * this.lado;
+            }
+            
+            dibujar(canvas) {
+                const ctx = canvas.getContext('2d');
+                const size = Math.min(canvas.width, canvas.height) * 0.8;
+                const x = (canvas.width - size) / 2;
+                const y = (canvas.height - size) / 2;
+                
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.strokeStyle = 'blue';
+                ctx.lineWidth = 2;
+                ctx.strokeRect(x, y, size, size);
+                
+                ctx.fillStyle = 'blue';
+                ctx.font = '10px Arial';
+                ctx.fillText(`Lado: ${this.lado.toFixed(2)}`, 5, 12);
+            }
+        }
+
+        // Clase Circulo
+        class Circulo extends Figura {
+            constructor(radio) {
+                super("Círculo");
+                this.radio = radio;
+                this.PI = Math.PI;
+            }
+            
+            calcularArea() {
+                return this.PI * this.radio * this.radio;
+            }
+            
+            calcularPerimetro() {
+                return 2 * this.PI * this.radio;
+            }
+            
+            dibujar(canvas) {
+                const ctx = canvas.getContext('2d');
+                const size = Math.min(canvas.width, canvas.height) * 0.8;
+                const x = canvas.width / 2;
+                const y = canvas.height / 2;
+                const radio = size / 2;
+                
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                ctx.arc(x, y, radio, 0, 2 * Math.PI);
+                ctx.strokeStyle = 'red';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+                
+                ctx.fillStyle = 'red';
+                ctx.font = '10px Arial';
+                ctx.fillText(`Radio: ${this.radio.toFixed(2)}`, 5, 12);
+            }
+        }
+
+        // Clase Rectangulo
+        class Rectangulo extends Figura {
+            constructor(largo, ancho) {
+                super("Rectángulo");
+                this.largo = Math.max(largo, ancho);
+                this.ancho = Math.min(largo, ancho);
+            }
+            
+            calcularArea() {
+                return this.largo * this.ancho;
+            }
+            
+            calcularPerimetro() {
+                return 2 * (this.largo + this.ancho);
+            }
+            
+            dibujar(canvas) {
+                const ctx = canvas.getContext('2d');
+                const maxSize = Math.min(canvas.width, canvas.height) * 0.8;
+                const proporcion = this.largo / this.ancho;
+                
+                let width, height;
+                if (proporcion > 1) {
+                    width = maxSize;
+                    height = maxSize / proporcion;
+                } else {
+                    height = maxSize;
+                    width = maxSize * proporcion;
+                }
+                
+                const x = (canvas.width - width) / 2;
+                const y = (canvas.height - height) / 2;
+                
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.strokeStyle = 'green';
+                ctx.lineWidth = 2;
+                ctx.strokeRect(x, y, width, height);
+                
+                ctx.fillStyle = 'green';
+                ctx.font = '10px Arial';
+                ctx.fillText(`${this.largo.toFixed(2)} x ${this.ancho.toFixed(2)}`, 5, 12);
+            }
+        }
+
+        // Clase Rombo
+        class Rombo extends Figura {
+            constructor(diagonal1, diagonal2) {
+                super("Rombo");
+                this.diagonal1 = diagonal1;
+                this.diagonal2 = diagonal2;
+            }
+            
+            calcularArea() {
+                return (this.diagonal1 * this.diagonal2) / 2;
+            }
+            
+            calcularPerimetro() {
+                // Cálculo del lado a partir de las diagonales
+                const lado = Math.sqrt(Math.pow(this.diagonal1/2, 2) + Math.pow(this.diagonal2/2, 2));
+                return 4 * lado;
+            }
+            
+            dibujar(canvas) {
+                const ctx = canvas.getContext('2d');
+                const maxSize = Math.min(canvas.width, canvas.height) * 0.8;
+                
+                let d1, d2;
+                if (this.diagonal1 > this.diagonal2) {
+                    d1 = maxSize;
+                    d2 = maxSize * (this.diagonal2 / this.diagonal1);
+                } else {
+                    d2 = maxSize;
+                    d1 = maxSize * (this.diagonal1 / this.diagonal2);
+                }
+                
+                const centerX = canvas.width / 2;
+                const centerY = canvas.height / 2;
+                
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                ctx.moveTo(centerX, centerY - d2/2);
+                ctx.lineTo(centerX + d1/2, centerY);
+                ctx.lineTo(centerX, centerY + d2/2);
+                ctx.lineTo(centerX - d1/2, centerY);
+                ctx.closePath();
+                ctx.strokeStyle = 'orange';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+                
+                ctx.fillStyle = 'orange';
+                ctx.font = '10px Arial';
+                ctx.fillText(`D1: ${this.diagonal1.toFixed(2)}, D2: ${this.diagonal2.toFixed(2)}`, 5, 12);
+            }
+        }
+
+        // Clase Triangulo
+        class Triangulo extends Figura {
+            constructor(lado1, lado2, lado3) {
+                super("Triángulo");
+                this.lado1 = lado1;
+                this.lado2 = lado2;
+                this.lado3 = lado3;
+            }
+            
+            calcularArea() {
+                // Fórmula de Herón
+                const s = (this.lado1 + this.lado2 + this.lado3) / 2;
+                return Math.sqrt(s * (s - this.lado1) * (s - this.lado2) * (s - this.lado3));
+            }
+            
+            calcularPerimetro() {
+                return this.lado1 + this.lado2 + this.lado3;
+            }
+            
+            dibujar(canvas) {
+                const ctx = canvas.getContext('2d');
+                const maxSize = Math.min(canvas.width, canvas.height) * 0.8;
+                
+                const centerX = canvas.width / 2;
+                const centerY = canvas.height / 2;
+                
+                const maxLado = Math.max(Math.max(this.lado1, this.lado2), this.lado3);
+                const escala = maxSize / maxLado / 2;
+                
+                // Simplificación para visualización
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                ctx.moveTo(centerX, centerY - maxSize / 3);
+                ctx.lineTo(centerX + this.lado1 * escala, centerY + maxSize / 3);
+                ctx.lineTo(centerX - this.lado3 * escala, centerY + maxSize / 3);
+                ctx.closePath();
+                ctx.strokeStyle = 'magenta';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+                
+                ctx.fillStyle = 'magenta';
+                ctx.font = '10px Arial';
+                ctx.fillText(`${this.lado1.toFixed(1)}, ${this.lado2.toFixed(1)}, ${this.lado3.toFixed(1)}`, 5, 12);
+            }
+        }
+
+        // Clase Trapecio
+        class Trapecio extends Figura {
+            constructor(base1, base2, lado1, lado2) {
+                super("Trapecio");
+                this.base1 = Math.max(base1, base2);
+                this.base2 = Math.min(base1, base2);
+                this.lado1 = lado1;
+                this.lado2 = lado2;
+            }
+            
+            calcularArea() {
+                // Altura aproximada para visualización
+                const altura = Math.sqrt(Math.pow(this.lado1, 2) - Math.pow((this.base1 - this.base2) / 2, 2));
+                return ((this.base1 + this.base2) * altura) / 2;
+            }
+            
+            calcularPerimetro() {
+                return this.base1 + this.base2 + this.lado1 + this.lado2;
+            }
+            
+            dibujar(canvas) {
+                const ctx = canvas.getContext('2d');
+                const maxSize = Math.min(canvas.width, canvas.height) * 0.8;
+                
+                const centerX = canvas.width / 2;
+                const centerY = canvas.height / 2;
+                
+                const proporcion = this.base2 / this.base1;
+                
+                const anchoMayor = maxSize;
+                const anchoMenor = maxSize * proporcion;
+                const altura = maxSize / 2;
+                
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                ctx.moveTo(centerX - anchoMayor/2, centerY + altura/2);
+                ctx.lineTo(centerX + anchoMayor/2, centerY + altura/2);
+                ctx.lineTo(centerX + anchoMenor/2, centerY - altura/2);
+                ctx.lineTo(centerX - anchoMenor/2, centerY - altura/2);
+                ctx.closePath();
+                ctx.strokeStyle = 'cyan';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+                
+                ctx.fillStyle = 'cyan';
+                ctx.font = '10px Arial';
+                ctx.fillText(`B1: ${this.base1.toFixed(1)}, B2: ${this.base2.toFixed(1)}`, 5, 12);
+            }
+        }
+
+        // Sistema de gestión de figuras
+        class SistemaFiguras {
+            constructor() {
+                this.ternas = [];
+                this.figuras = [];
+                this.areas = [];
+                this.perimetros = [];
+            }
+            
+            procesarValores(valoresStr) {
+                // Limpiar datos anteriores
+                this.ternas = [];
+                this.figuras = [];
+                this.areas = [];
+                this.perimetros = [];
+                
+                // Procesar valores
+                const valores = valoresStr.split(',').map(v => parseFloat(v.trim())).filter(v => !isNaN(v));
+                
+                if (valores.length % 3 !== 0) {
+                    return "Error: La cantidad de valores debe ser múltiplo de 3";
+                }
+                
+                // Procesar ternas
+                for (let i = 0; i < valores.length; i += 3) {
+                    const v1 = valores[i];
+                    const v2 = valores[i + 1];
+                    const v3 = valores[i + 2];
+                    
+                    const terna = new Terna(v1, v2, v3);
+                    this.ternas.push(terna);
+                    
+                    this.procesarTerna(terna);
+                }
+                
+                return null; // Sin errores
+            }
+            
+            procesarTerna(terna) {
+                const tipo = terna.tipoTerna();
+                const v1 = terna.valor1;
+                const v2 = terna.valor2;
+                const v3 = terna.valor3;
+                
+                switch (tipo) {
+                    case "TRES_IGUALES":
+                        // Crear cuadrado y círculo
+                        const cuadrado = new Cuadrado(v1);
+                        const circulo = new Circulo(v1);
+                        
+                        this.figuras.push(cuadrado);
+                        this.figuras.push(circulo);
+                        this.areas.push(cuadrado.calcularArea());
+                        this.areas.push(circulo.calcularArea());
+                        this.perimetros.push(cuadrado.calcularPerimetro());
+                        this.perimetros.push(circulo.calcularPerimetro());
+                        break;
+                        
+                    case "DOS_IGUALES":
+                        // Identificar los valores iguales
+                        let ladoIgual, ladoDiferente;
+                        
+                        if (v1 === v2) {
+                            ladoIgual = v1;
+                            ladoDiferente = v3;
+                        } else if (v2 === v3) {
+                            ladoIgual = v2;
+                            ladoDiferente = v1;
+                        } else { // v1 === v3
+                            ladoIgual = v1;
+                            ladoDiferente = v2;
+                        }
+                        
+                        // Crear rectángulo y rombo
+                        const rectangulo = new Rectangulo(ladoIgual, ladoDiferente);
+                        const rombo = new Rombo(ladoIgual, ladoDiferente);
+                        
+                        this.figuras.push(rectangulo);
+                        this.figuras.push(rombo);
+                        this.areas.push(rectangulo.calcularArea());
+                        this.areas.push(rombo.calcularArea());
+                        this.perimetros.push(rectangulo.calcularPerimetro());
+                        this.perimetros.push(rombo.calcularPerimetro());
+                        break;
+                        
+                    case "TODOS_DIFERENTES":
+                        // Verificar si pueden formar un triángulo válido
+                        if (v1 + v2 > v3 && v1 + v3 > v2 && v2 + v3 > v1) {
+                            const triangulo = new Triangulo(v1, v2, v3);
+                            this.figuras.push(triangulo);
+                            this.areas.push(triangulo.calcularArea());
+                            this.perimetros.push(triangulo.calcularPerimetro());
+                        }
+                        
+                        // Calcular el cuarto lado del trapecio
+                        const cuartoLado = Math.sqrt(Math.pow(v1, 2) + Math.pow(v2, 2) - 2 * v1 * v2 * Math.cos(Math.PI/3));
+                        const trapecio = new Trapecio(v1, v2, v3, cuartoLado);
+                        
+                        this.figuras.push(trapecio);
+                        this.areas.push(trapecio.calcularArea());
+                        this.perimetros.push(trapecio.calcularPerimetro());
+                        break;
+                }
+            }
+            
+            mostrarResultados() {
+                let resultado = "RESULTADOS:\n\n";
+                
+                for (let i = 0; i < this.figuras.length; i++) {
+                    resultado += `Figura ${i + 1}: ${this.figuras[i].nombre}\n`;
+                    resultado += `  Área: ${this.areas[i].toFixed(2)}\n`;
+                    resultado += `  Perímetro: ${this.perimetros[i].toFixed(2)}\n\n`;
+                }
+                
+                return resultado;
+            }
+            
+            ordenarAreas() {
+                // Crear arreglos de índices para ordenar
+                let indices = Array.from(Array(this.areas.length).keys());
+                
+                // Ordenar índices basados en las áreas (ascendente)
+                indices.sort((a, b) => this.areas[a] - this.areas[b]);
+                
+                // Crear arreglos ordenados
+                let figurasOrdenadas = indices.map(i => this.figuras[i]);
+                let areasOrdenadas = indices.map(i => this.areas[i]);
+                
+                let resultado = "ÁREAS ORDENADAS (ASCENDENTE):\n\n";
+                
+                for (let i = 0; i < areasOrdenadas.length; i++) {
+                    resultado += `${i + 1}. ${figurasOrdenadas[i].nombre}: ${areasOrdenadas[i].toFixed(2)}\n`;
+                }
+                
+                return resultado;
+            }
+            
+            ordenarPerimetros() {
+                // Crear arreglos de índices para ordenar
+                let indices = Array.from(Array(this.perimetros.length).keys());
+                
+                // Ordenar índices basados en los perímetros (descendente)
+                indices.sort((a, b) => this.perimetros[b] - this.perimetros[a]);
+                
+                // Crear arreglos ordenados
+                let figurasOrdenadas = indices.map(i => this.figuras[i]);
+                let perimetrosOrdenados = indices.map(i => this.perimetros[i]);
+                
+                let resultado = "PERÍMETROS ORDENADOS (DESCENDENTE):\n\n";
+                
+                for (let i = 0; i < perimetrosOrdenados.length; i++) {
+                    resultado += `${i + 1}. ${figurasOrdenadas[i].nombre}: ${perimetrosOrdenados[i].toFixed(2)}\n`;
+                }
+                
+                return resultado;
+            }
+            
+            mostrarEstadisticas() {
+                let ternasIguales = 0;
+                let ternasDobleIgual = 0;
+                
+                for (let terna of this.ternas) {
+                    const tipo = terna.tipoTerna();
+                    if (tipo === "TRES_IGUALES") {
+                        ternasIguales++;
+                    } else if (tipo === "DOS_IGUALES") {
+                        ternasDobleIgual++;
+                    }
+                }
+                
+                // Calcular promedio de áreas
+                const sumaAreas = this.areas.reduce((sum, area) => sum + area, 0);
+                const promedioAreas = this.areas.length ? sumaAreas / this.areas.length : 0;
+                
+                // Calcular mediana de perímetros
+                const medianaPerimetros = this.calcularMediana([...this.perimetros]);
+                
+                let resultado = "ESTADÍSTICAS:\n\n";
+                resultado += `Ternas con tres números iguales: ${ternasIguales}\n`;
+                resultado += `Ternas con dos números iguales: ${ternasDobleIgual}\n`;
+                resultado += `Promedio de áreas: ${promedioAreas.toFixed(2)}\n`;
+                resultado += `Mediana de perímetros: ${medianaPerimetros.toFixed(2)}\n`;
+                
+                return resultado;
+            }
+            
+            calcularMediana(lista) {
+                if (lista.length === 0) return 0;
+                
+                // Ordenar la lista
+                lista.sort((a, b) => a - b);
+                
+                const n = lista.length;
+                if (n % 2 === 0) {
+                    // Si hay un número par de elementos, promedio de los dos centrales
+                    return (lista[n/2 - 1] + lista[n/2]) / 2;
+                } else {
+                    // Si hay un número impar de elementos, el central
+                    return lista[Math.floor(n/2)];
+                }
+            }
+            
+            dibujarFiguras(panelGrafico) {
+                // Limpiar panel gráfico
+                panelGrafico.innerHTML = '';
+                
+                // Dibujar cada figura
+                for (let i = 0; i < this.figuras.length; i++) {
+                    const figuraContainer = document.createElement('div');
+                    figuraContainer.className = 'figura-container';
+                    
+                    const canvasContainer = document.createElement('div');
+                    canvasContainer.className = 'canvas-container';
+                    
+                    const canvas = document.createElement('canvas');
+                    canvas.width = 120;
+                    canvas.height = 120;
+                    
+                    const titulo = document.createElement('div');
+                    titulo.className = 'figura-titulo';
+                    titulo.textContent = this.figuras[i].nombre;
+                    
+                    // Dibujar la figura en el canvas
+                    this.figuras[i].dibujar(canvas);
+                    
+                    canvasContainer.appendChild(canvas);
+                    figuraContainer.appendChild(canvasContainer);
+                    figuraContainer.appendChild(titulo);
+                    panelGrafico.appendChild(figuraContainer);
+                }
+            }
+        }
+
+        // Inicialización y configuración de eventos
+        document.addEventListener('DOMContentLoaded', function() {
+            const sistema = new SistemaFiguras();
+            
+            const btnProcesar = document.getElementById('btnProcesar');
+            const btnOrdenarAreas = document.getElementById('btnOrdenarAreas');
+            const btnOrdenarPerimetros = document.getElementById('btnOrdenarPerimetros');
+            const btnEstadisticas = document.getElementById('btnEstadisticas');
+            
+            const inputValores = document.getElementById('valores');
+            const panelGrafico = document.getElementById('panelGrafico');
+            const areaResultados = document.getElementById('areaResultados');
+            
+            btnProcesar.addEventListener('click', function() {
+                const valores = inputValores.value;
+                if (!valores) {
+                    alert('Por favor ingrese valores separados por comas');
+                    return;
+                }
+                
+                const error = sistema.procesarValores(valores);
+                if (error) {
+                    alert(error);
+                    return;
+                }
+                
+                sistema.dibujarFiguras(panelGrafico);
+                areaResultados.textContent = sistema.mostrarResultados();
+            });
+            
+            btnOrdenarAreas.addEventListener('click', function() {
+                if (sistema.figuras.length === 0) {
+                    alert('Primero debe procesar datos');
+                    return;
+                }
+                
+                areaResultados.textContent = sistema.ordenarAreas();
+            });
+            
+            btnOrdenarPerimetros.addEventListener('click', function() {
+                if (sistema.figuras.length === 0) {
+                    alert('Primero debe procesar datos');
+                    return;
+                }
+                
+                areaResultados.textContent = sistema.ordenarPerimetros();
+            });
+            
+            btnEstadisticas.addEventListener('click', function() {
+                if (sistema.figuras.length === 0) {
+                    alert('Primero debe procesar datos');
+                    return;
+                }
+                
+                areaResultados.textContent = sistema.mostrarEstadisticas();
+            });
+        });
+    </script>
+</body>
+</html>
