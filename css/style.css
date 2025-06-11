@@ -271,7 +271,7 @@ button {
 .navigation.navbar {
      font-family: 'Open Sans', sans-serif;
      float: right;
-     padding-top: 35px !important;
+     padding-top: 60px !important;
      padding: 0;
 }
 
@@ -1189,6 +1189,69 @@ ul.link_menu li a:hover {
 
 /** end footer **/
 
+         /* Barra superior de contacto */
+         .top-contact-bar {
+            background: linear-gradient(135deg, #2d5a3d, #4a7c59);
+            color: white;
+            padding: 10px 0;
+            font-size: 14px;
+         }
+
+         .top-contact-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+         }
+
+         .contact-info {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+         }
+
+         .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+         }
+
+         .contact-item:hover {
+            color: #c8e6c9;
+            transform: translateY(-1px);
+         }
+
+         .contact-item i {
+            font-size: 16px;
+         }
+
+         .social-links {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+         }
+
+         .social-link {
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+         }
+
+         .social-link:hover {
+            transform: translateY(-2px) scale(1.1);
+            background: rgba(255, 255, 255, 0.25);
+            color: white;
+         }
 
 /** endinner page css **/
 
