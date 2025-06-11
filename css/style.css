@@ -1258,3 +1258,9 @@ ul.link_menu li a:hover {
 .in_page .header {
      border-bottom: #116835 solid 2px;
 }
+
+.centered {
+display: flex;
+align-items: center;
+justify-content: center;
+}
