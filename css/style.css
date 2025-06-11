@@ -76,7 +76,12 @@ h6 {
      color: #111111;
      margin: 0
 }
-
+h1{
+     color: #ffffff;
+}
+h5 {
+     color: #ffffff;
+}
 h1 {
      font-size: 24px;
 }
@@ -187,7 +192,7 @@ img {
 }
 
 .navbar-form input {
-     border:#16d316 !important;
+     border:#116835 !important;
 }
 
 .badge {
@@ -282,14 +287,14 @@ button {
 
 .navigation.navbar-dark .navbar-nav .nav-link:focus,
 .navigation.navbar-dark .navbar-nav .nav-link:hover {
-     color: #33f033;
+     color: #116835;
 }
 
 .navigation.navbar-dark .navbar-nav .active>.nav-link,
 .navigation.navbar-dark .navbar-nav .nav-link.active,
 .navigation.navbar-dark .navbar-nav .nav-link.show,
 .navigation.navbar-dark .navbar-nav .show>.nav-link {
-     color: #33f033;
+     color: #116835;
 }
 
 .navbar-expand-md .navbar-nav {
@@ -389,7 +394,7 @@ button {
 #myCarousel .carousel-control-next:hover,
 #myCarousel .carousel-control-prev:focus,
 #myCarousel .carousel-control-next:focus {
-     background: #16d316;
+     background: #116835;
      color: #fff;
      width: 57px;
      height: 57px;
@@ -437,7 +442,7 @@ button {
 }
 
 .green {
-     color: #16e816 !important;
+     color: #116835 !important;
 }
 
 .d_flex {
@@ -460,7 +465,7 @@ button {
 }
 
 .read_more:hover {
-     background: #16e816;
+     background: #116835;
      color: #fff;
      transition: ease-in all 0.5s;
 }
@@ -664,7 +669,7 @@ button {
 #design .carousel-control-next:hover,
 #design .carousel-control-prev:focus,
 #design .carousel-control-next:focus {
-     background: #16d316;
+     background: #116835;
      color: #000;
 }
 
@@ -770,7 +775,7 @@ button {
 }
 
 .latest_news .news_box .news_room ul li a:hover {
-     color: #16e816 !important;
+     color: #116835 !important;
 }
 
 .latest_news .news_box .news_room ul li:last-child a {
@@ -825,7 +830,7 @@ button {
      margin-top: 60px;
      text-align: left;
      padding: 0 30px 40px 30px;
-     border: #16d316 solid 1px;
+     border: #116835 solid 1px;
      border-radius: 5px;
 }
 
@@ -873,7 +878,7 @@ button {
 #testimon .carousel-control-next:hover,
 #testimon .carousel-control-prev:focus,
 #testimon .carousel-control-next:focus {
-     background: #16d316;
+     background: #116835;
      color: #000;
 }
 
@@ -902,7 +907,7 @@ button {
 /** contact section **/
 
 .contact {
-     background: url(../images/conatct.jpg);
+     background: url(../images/fondoempaquesmultiples.jpg);
      background-size: 100% 100%;
      background-repeat: no-repeat;
      background-position: center;
@@ -1021,7 +1026,7 @@ ul.social_icon li a {
 
 ul.social_icon li a:hover {
      color: #fff;
-     background: #33f033;
+     background: #116835;
 }
 
 .pad_roght2 {
@@ -1067,7 +1072,7 @@ ul.link_menu li a {
 }
 
 ul.link_menu li a:hover {
-     color: #33f033;
+     color: #116835;
 }
 
 .bottom_form {
@@ -1106,7 +1111,7 @@ ul.link_menu li a:hover {
 
 .sub_btn:hover {
      transition: ease-in all 0.5s;
-     color: #33f033;
+     color: #116835;
 }
 
 #hkh *::placeholder {
@@ -1134,9 +1139,53 @@ ul.link_menu li a:hover {
 }
 
 .copyright a:hover {
-     color: #33f033;
+     color: #116835;
 }
 
+.design {
+  margin-bottom: 80px; /* espacio entre secciones */
+}
+
+#marcas {
+  padding-top: 40px; /* opcional, asegura separación desde arriba */
+  z-index: 1;
+  position: relative;
+}
+
+/* Opcional: asegurarte de que el carrusel no se superponga */
+.carousel-control-prev,
+.carousel-control-next {
+  z-index: 2;
+}
+
+.marcas img {
+  width: 120px;        /* tamaño uniforme */
+  height: 120px;
+  object-fit: contain; /* evita que se deformen */
+  display: block;
+  margin: 0 auto;      /* centra horizontalmente */
+}
+
+.carousel-indicators {
+  bottom: 20px;
+  left: 35.5%;
+  transform: translateX(-50%);
+  justify-content: center;
+  position: absolute;
+  z-index: 15;
+  display: flex;
+  gap: 12px;
+}
+
+.carousel-indicators li {
+  width: 12px;
+  height: 12px;
+  background-color: #116835;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid #369f62;
+}
 
 /** end footer **/
 
@@ -1144,5 +1193,5 @@ ul.link_menu li a:hover {
 /** endinner page css **/
 
 .in_page .header {
-     border-bottom: #3fe43d solid 2px;
+     border-bottom: #116835 solid 2px;
 }
