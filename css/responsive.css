@@ -5,17 +5,17 @@
 
 @media (min-width: 1200px) and (max-width: 1342px) {
     #myCarousel a.carousel-control-next {
-        right: 45.5%;
+        /*right: 45.5%;*/
     }
     #myCarousel .carousel-control-next:hover,
     #myCarousel .carousel-control-next:focus {
-        right: 44%;
+       /* right: 44%; */
     }
     #testimon a.carousel-control-prev {
-        left: 116%;
+       /* left: 116%; */
     }
     #testimon a.carousel-control-next {
-        right: -39%;
+       /* right: -39%; */
     }
 }
 
@@ -24,15 +24,15 @@
         margin: 0px 29px;
     }
     #myCarousel a.carousel-control-next {
-        right: 44.5%;
+       /* right: 44.5%; */
     }
     #myCarousel .carousel-control-next:hover,
     #myCarousel .carousel-control-next:focus {
-        right: 42%;
+       /* right: 42%; */
     }
     #myCarousel .carousel-control-prev:hover,
     #myCarousel .carousel-control-prev:focus {
-        left: 45.5%;
+      /*  left: 45.5%; */
     }
     .text-bg h1 {
         font-size: 76px;
@@ -49,12 +49,11 @@
     .titlepage h2 {
         font-size: 37px;
     }
-    #design a.carousel-control-next {
-        right: 26%;
-    }
+
     #design a.carousel-control-prev {
-        left: 28%;
+        left: 28%; */
     }
+
     .mr_le figure {
         margin-right: -145px !important;
     }
