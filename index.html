@@ -531,25 +531,33 @@ Agradecemos a las autoridades aduanales por este voto de confianza y reiteramos 
             </div>
             <div class="row">
                <div class="col-md-6">
-                  <form action="https://formsubmit.co/verasetanislao@gmail.com.com" method="POST" class="main_form">
-   <input type="hidden" name="_captcha" value="false">
-   <div class="row">
-      <div class="col-md-12">
-         <input class="contactus" placeholder="Nombre" type="text" name="name" required>
-      </div>
-      <div class="col-md-12">
-         <input class="contactus" placeholder="Correo electrónico" type="email" name="email" required>
-      </div>
-      <div class="col-md-12">
-         <input class="contactus" placeholder="Teléfono" type="text" name="phone">
-      </div>
-      <div class="col-md-12">
-         <textarea class="textarea" placeholder="Mensaje" name="message" required></textarea>
-      </div>
-      <div class="col-md-12">
-         <button type="submit" class="send_btn">Enviar</button>
-      </div>
-   </div>
+   <form action="https://formspree.io/f/movwdzjy" method="POST" class="main_form">
+  <!-- Redirección a tu página -->
+  <input type="hidden" name="_next" value="http://127.0.0.1:5500/limelight-html/index.html">
+
+  <!-- Asunto del mensaje -->
+  <input type="hidden" name="_subject" value="Nuevo mensaje desde el formulario de contacto">
+
+  <!-- Campo de fecha y hora -->
+  <input type="hidden" name="Fecha y hora" id="fecha-hora-input">
+
+  <div class="row">
+    <div class="col-md-12">
+      <input class="contactus" placeholder="Nombre" type="text" name="Nombre" required>
+    </div>
+    <div class="col-md-12">
+      <input class="contactus" placeholder="Correo electrónico" type="email" name="email" required>
+    </div>
+    <div class="col-md-12">
+      <input class="contactus" placeholder="Teléfono" type="text" name="Teléfono">
+    </div>
+    <div class="col-md-12">
+      <textarea class="textarea" placeholder="Mensaje" name="Mensaje" required></textarea>
+    </div>
+    <div class="col-md-12">
+      <button type="submit" class="send_btn">Enviar</button>
+    </div>
+  </div>
 </form>
                </div>
                <div class="col-md-6">
@@ -619,5 +627,14 @@ Santo Domingo Este, Rep. Dominicana</p>
       <!-- sidebar -->
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
+
+     <!--fecha y hora formulario-->
+     <script>
+   const now = new Date();
+   const fecha = now.toLocaleDateString('es-ES'); // ej: 12/06/2025
+   const hora = now.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' }); // ej: 14:35
+   document.getElementById('fecha-hora-input').value = `${fecha} ${hora}`;
+</script>
+
    </body>
 </html>

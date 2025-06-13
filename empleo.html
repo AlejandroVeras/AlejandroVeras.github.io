@@ -130,32 +130,40 @@
             </div>
             <div class="row">
                 <div class="col-md-6 offset-md-3">
-                    <form id="empleoForm" class="main_form" method="post" action="procesar_formulario.php" enctype="multipart/form-data">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <input class="contactus" placeholder="Nombre Completo" type="text" name="nombre" required>
-                            </div>
-                            <div class="col-md-12">
-                                <input class="contactus" placeholder="Correo Electrónico" type="email" name="email" required>
-                            </div>
-                            <div class="col-md-12">
-                                <input class="contactus" placeholder="Teléfono" type="tel" name="telefono">
-                            </div>
-                            <div class="col-md-12">
-                                <label for="cv">Currículum Vitae:</label>
-                                <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
-                            </div>
-                            <div class="col-md-12">
-                                <textarea class="textarea" placeholder="Carta de Presentación" name="carta"></textarea>
-                            </div>
-                            <div class="col-md-12">
-                                <input class="contactus" placeholder="Puesto al que aspira" type="text" name="puesto" required>
-                            </div>
-                            <div class="col-md-12">
-                                <button class="send_btn" type="submit">Enviar Solicitud</button>
-                            </div>
-                        </div>
-                    </form>
+                <!-- Formulario -->
+<form 
+  id="empleoForm" 
+  class="main_form"
+  action="https://formspree.io/f/movwdzjy" 
+  method="POST" 
+  enctype="multipart/form-data"
+>
+  <div class="row">
+    <div class="col-md-12">
+      <input class="contactus" placeholder="Nombre Completo" type="text" name="nombre" required>
+    </div>
+    <div class="col-md-12">
+      <input class="contactus" placeholder="Correo Electrónico" type="email" name="email" required>
+    </div>
+    <div class="col-md-12">
+      <input class="contactus" placeholder="Teléfono" type="tel" name="telefono">
+    </div>
+    <div class="col-md-12">
+      <label for="cv">Currículum Vitae:</label>
+      <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+    </div>
+    <div class="col-md-12">
+      <textarea class="textarea" placeholder="Carta de Presentación" name="carta"></textarea>
+    </div>
+    <div class="col-md-12">
+      <input class="contactus" placeholder="Puesto al que aspira" type="text" name="puesto" required>
+    </div>
+    <div class="col-md-12">
+      <button class="send_btn" type="submit">Enviar Solicitud</button>
+    </div>
+  </div>
+</form>
+
                 </div>
             </div>
         </div>
@@ -221,6 +229,7 @@ Santo Domingo Este, Rep. Dominicana</p>
     <!-- sidebar -->
     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="js/custom.js"></script>
+
 </body>
 
 </html>
