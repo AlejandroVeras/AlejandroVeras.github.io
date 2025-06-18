@@ -1,396 +1,516 @@
-/*--------------------------------------------------------------------- File Name: responsive.css ---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------
+File Name: responsive.css
+Version: Corregida - Menú hacia la izquierda
+---------------------------------------------------------------------*/
 
+/*-------------------------------------------------------------------
+[ 1. ] Estilos para Tablets y Dispositivos Medianos (hasta 991px)
+-------------------------------------------------------------------*/
+@media (max-width: 991px) {
+  /* --- Header y Navegación --- */
+  .header {
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
 
-/*------------------------------------------------------------------- 991px x 768px ---------------------------------------------------------------------*/
+  .logo_section {
+    justify-content: flex-start;
+  }
 
-@media (min-width: 1200px) and (max-width: 1342px) {
-    #myCarousel a.carousel-control-next {
-        /*right: 45.5%;*/
-    }
-    #myCarousel .carousel-control-next:hover,
-    #myCarousel .carousel-control-next:focus {
-       /* right: 44%; */
-    }
-    #testimon a.carousel-control-prev {
-       /* left: 116%; */
-    }
-    #testimon a.carousel-control-next {
-       /* right: -39%; */
-    }
+  .navigation.navbar {
+    float: right;
+    padding-top: 0 !important;
+    margin-top: 0;
+  }
+
+  .navigation .navbar-collapse {
+    background: linear-gradient(135deg, #2d5a3d, #4a7c59);
+    padding: 25px 20px;
+    margin-top: 15px;
+    position: absolute;
+    width: 100%;
+    right: 0;
+    z-index: 999;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .navigation.navbar-dark .navbar-nav .nav-link {
+    padding: 12px 0;
+    color: #fff;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .navigation.navbar-dark .navbar-nav .nav-link:hover {
+    color: #c8e6c9;
+    transform: translateX(5px);
+  }
+
+  .navigation.navbar-dark .navbar-toggler {
+    border: none;
+    background: none;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .navigation.navbar-dark .navbar-toggler:hover {
+    background: rgba(17, 104, 53, 0.1);
+  }
+
+  .navigation.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(17, 104, 53, 1)' stroke-width='2.5' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    width: 24px;
+    height: 24px;
+  }
+
+  /* --- Títulos y Texto General --- */
+  .titlepage h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  /* --- Sección 'Nosotros' --- */
+  .about .titlepage {
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .about_img {
+    padding: 20px;
+  }
+
+  .about_img::before {
+    display: none;
+  }
+
+  /* --- Carrusel de Banner Principal --- */
+  .banner_main .carousel-item {
+    height: 60vh;
+  }
+
+  .banner_main .carousel-control-prev,
+  .banner_main .carousel-control-next {
+    width: 45px;
+    height: 45px;
+  }
+  .banner-title {
+    font-size: 2em;
+  }
+  .banner-subtitle {
+    font-size: 1em;
+  }
+
+  /* --- Galería de Productos --- */
+  .gallery_text {
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  /* --- Sección 'Diseño' y 'Testimonios' (Carruseles) --- */
+  .design,
+  .Testimonial {
+    padding-top: 40px;
+  }
+
+  .text_de {
+    padding: 20px;
+    text-align: center;
+  }
+
+  #design .carousel-control-prev,
+  #design .carousel-control-next {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    opacity: 0.7;
+  }
+
+  #design a.carousel-control-prev {
+    left: 15px;
+  }
+
+  #design a.carousel-control-next {
+    right: 15px;
+  }
+
+  /* --- Noticias --- */
+  .latest_news .news_box .news_img figure,
+  .mr_le figure {
+    margin: 0 !important;
+  }
+
+  /* --- Testimonios --- */
+  .pad_left0,
+  .pad_roght0 {
+    padding: 0 15px;
+  }
+
+  #testimon a.carousel-control-prev,
+  #testimon a.carousel-control-next {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    top: auto;
+    bottom: -70px;
+  }
+
+  #testimon a.carousel-control-prev {
+    left: 35%;
+    transform: translateX(-50%);
+  }
+
+  #testimon a.carousel-control-next {
+    right: 35%;
+    transform: translateX(50%);
+  }
+
+  .text_humai {
+    margin-top: 30px;
+  }
+  .text_humai i img {
+    margin-top: -40px;
+    width: 80px;
+  }
+
+  .banner_testimonial {
+    padding-bottom: 100px;
+  }
+
+  /* --- Footer --- */
+  .footer h3,
+  ul.social_icon,
+  .variat,
+  ul.conta li,
+  ul.link_menu li {
+    text-align: center;
+  }
+  .footer .col-md-3 {
+    margin-bottom: 30px;
+  }
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
-    .navigation.navbar-dark .navbar-nav .nav-link {
-        margin: 0px 29px;
-    }
-    #myCarousel a.carousel-control-next {
-       /* right: 44.5%; */
-    }
-    #myCarousel .carousel-control-next:hover,
-    #myCarousel .carousel-control-next:focus {
-       /* right: 42%; */
-    }
-    #myCarousel .carousel-control-prev:hover,
-    #myCarousel .carousel-control-prev:focus {
-      /*  left: 45.5%; */
-    }
-    .text-bg h1 {
-        font-size: 76px;
-    }
-    .about_img::before {
-        height: 90%;
-    }
-    .mar_top {
-        margin-top: -21px;
-    }
-    .gallery_text {
-        height: 308px;
-    }
-    .titlepage h2 {
-        font-size: 37px;
-    }
+/*-------------------------------------------------------------------
+[ 2. ] Estilos para Móviles (hasta 767px) - MENÚ HACIA LA IZQUIERDA
+-------------------------------------------------------------------*/
+@media (max-width: 767px) {
+  /* --- Header Moderno y Profesional --- */
+  .header {
+    padding: 12px 15px;
+    height: auto;
+    background: #ffffff;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 1000;
+  }
 
-    #design a.carousel-control-prev {
-        left: 28%; */
-    }
+  /* Contenedor flex para logo y hamburguesa */
+  .header .row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    margin: 0 !important;
+  }
 
-    .mr_le figure {
-        margin-right: -145px !important;
-    }
-    .latest_news .news_box .news_img figure {
-        margin-left: -145px;
-    }
-    .latest_news .news_box .news_room ul li a {
-        padding-right: 8px;
-    }
-    .banner_testimonial {
-        padding: 40px 20px;
-    }
-    #testimon a.carousel-control-prev {
-        left: 113%;
-    }
-    #testimon a.carousel-control-next {
-        right: -40%;
-    }
-    .footer h3 {
-        font-size: 26px;
-    }
+  /* Logo section */
+  .header .logo_section {
+    width: auto !important;
+    flex: 1 !important;
+    max-width: none !important;
+    justify-content: flex-start !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+  }
+
+  .logo {
+    text-align: left !important;
+    margin: 0 !important;
+  }
+
+  .logo img {
+    max-height: 45px !important;
+    width: auto !important;
+  }
+
+  /* Navegación - hamburguesa */
+  .header .col-md-9 {
+    width: auto !important;
+    flex: 0 0 auto !important;
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  .navigation.navbar {
+    width: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative !important;
+  }
+
+  /* Botón hamburguesa moderno */
+  .navigation.navbar-dark .navbar-toggler {
+    border: 2px solid #116835 !important;
+    background: #116835 !important;
+    padding: 8px 10px !important;
+    margin: 0 !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+  }
+
+  .navigation.navbar-dark .navbar-toggler:hover {
+    background: #2d5a3d !important;
+    transform: scale(1.05) !important;
+  }
+
+  .navigation.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2.5' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+    width: 22px !important;
+    height: 22px !important;
+  }
+
+  /* SOLUCIÓN: Menú desplegable hacia la IZQUIERDA */
+  .navigation .navbar-collapse {
+    position: absolute !important;
+    top: calc(100% + 10px) !important;
+    right: 0px !important;
+    width: 280px !important;
+    max-width: calc(100vw - 30px) !important;
+    background: linear-gradient(135deg, #2d5a3d, #4a7c59) !important;
+    padding: 25px 20px !important;
+    margin: 0 !important;
+    z-index: 9999 !important;
+    border-radius: 15px !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    transform-origin: top left !important;
+  }
+
+  .navigation.navbar-dark .navbar-nav {
+    width: 100% !important;
+  }
+
+  .navigation.navbar-dark .navbar-nav .nav-link {
+    padding: 15px 20px !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.3s ease !important;
+    display: block !important;
+    border-radius: 8px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .navigation.navbar-dark .navbar-nav .nav-link:last-child {
+    border-bottom: none !important;
+    margin-bottom: 0 !important;
+  }
+
+  .navigation.navbar-dark .navbar-nav .nav-link:hover,
+  .navigation.navbar-dark .navbar-nav .nav-link:focus {
+    color: #c8e6c9 !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    transform: translateX(8px) !important;
+    padding-left: 28px !important;
+  }
+
+  .navigation.navbar-dark .navbar-nav .nav-link.active {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+  }
+
+  /* --- Mejoras generales de diseño --- */
+  .titlepage h2 {
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+  }
+
+  /* --- Secciones con mejor espaciado --- */
+  .about,
+  .service,
+  .gallery,
+  .design,
+  .latest_news,
+  .Testimonial,
+  .contact {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  /* --- Banner Principal --- */
+  .banner_main {
+    padding: 0 !important;
+    min-height: 0 !important;
+    height: auto;
+  }
+
+  .banner_main .carousel-item {
+    height: auto;
+  }
+
+  .banner_main .banner-img {
+    height: auto;
+    width: 100%;
+  }
+
+  .banner-title {
+    font-size: 1.8em;
+    font-weight: 700;
+  }
+
+  .banner-subtitle {
+    display: none;
+  }
+
+  /* --- Botones modernos --- */
+  .read_more {
+    background: linear-gradient(135deg, #116835, #2d5a3d) !important;
+    border: none !important;
+    border-radius: 25px !important;
+    padding: 12px 30px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(17, 104, 53, 0.3) !important;
+  }
+
+  .read_more:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(17, 104, 53, 0.4) !important;
+    background: linear-gradient(135deg, #2d5a3d, #116835) !important;
+  }
+
+  /* --- Carruseles --- */
+  .design .carousel-item .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .text_de {
+    padding: 30px 20px;
+  }
+
+  /* --- Formulario de contacto --- */
+  .main_form .send_btn {
+    width: 100%;
+    max-width: none;
+    background: linear-gradient(135deg, #116835, #2d5a3d) !important;
+    border: none !important;
+    border-radius: 25px !important;
+    padding: 15px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .main_form .send_btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(17, 104, 53, 0.4) !important;
+  }
+
+  .map_main {
+    margin-top: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  /* --- Barra superior de contacto - UNA LÍNEA EN MÓVIL --- */
+  .top-contact-content {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 15px !important;
+    text-align: left !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .contact-info {
+    flex-direction: row !important;
+    gap: 20px !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+
+  .contact-item {
+    font-size: 13px !important;
+    white-space: nowrap !important;
+  }
+
+  .contact-item span {
+    display: none !important;
+  }
+
+  .contact-item i {
+    font-size: 16px !important;
+  }
+
+  .social-links {
+    justify-content: flex-end !important;
+    flex-shrink: 0 !important;
+    gap: 8px !important;
+  }
+
+  .social-link {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 16px !important;
+  }
+
+  /* --- Cards y elementos con sombras --- */
+  .news_box,
+  .gallery_img,
+  .about_img {
+    border-radius: 15px !important;
+    overflow: hidden !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .news_box:hover,
+  .gallery_img:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+  }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-    .navigation.navbar-dark .navbar-nav .nav-link {
-        margin: 0px 12px;
-    }
-    #myCarousel a.carousel-control-next {
-        right: 42.5%;
-    }
-    #myCarousel .carousel-control-next:hover,
-    #myCarousel .carousel-control-next:focus {
-        right: 40%;
-    }
-    #myCarousel .carousel-control-prev:hover,
-    #myCarousel .carousel-control-prev:focus {
-        left: 45.5%;
-    }
-    .text-bg h1 {
-        font-size: 60px;
-        line-height: 73px;
-    }
-    .titlepage h2 {
-        font-size: 28px;
-        line-height: 23px;
-    }
-    .about .titlepage p {
-        font-size: 15px;
-        line-height: 28px;
-        padding-bottom: 18px;
-        padding-right: 13px;
-    }
-    .about_img::before {
-        height: 77%;
-    }
-    .service_box h3 {
-        font-size: 18px;
-    }
-    .gallery_text {
-        height: 233px;
-    }
-    #design a.carousel-control-next {
-        right: 25%;
-    }
-    #design a.carousel-control-prev {
-        left: 14%;
-    }
-    .text_de .titlepage {
-        padding-bottom: 13px;
-    }
-    .mr_le figure {
-        margin-right: -118px !important;
-    }
-    .latest_news .news_box .news_img figure {
-        margin-left: -120px;
-    }
-    .banner_testimonial {
-        padding: 40px 3px;
-    }
-    .text_humai {
-        padding: 0 10px 40px 15px;
-    }
-    #testimon a.carousel-control-prev {
-        left: 110%;
-    }
-    #testimon a.carousel-control-next {
-        right: -45%;
-    }
-    .footer h3 {
-        font-size: 20px;
-    }
-    .pad_roght2 {
-        padding-right: 0;
-    }
-    ul.social_icon li a {
-        margin: 0 1px;
-    }
-}
+/* Pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 12px;
+  }
 
-@media (min-width: 576px) and (max-width: 767px) {
-    .logo {
-        padding-top: 5px;
-    }
-    .banner {
-        min-height: 550px;
-    }
-    .text-bg h1 {
-        font-size: 70px;
-    }
-    #myCarousel a.carousel-control-next {
-        right: 42.5%;
-    }
-    #myCarousel .carousel-control-next:hover,
-    #myCarousel .carousel-control-next:focus {
-        right: 39%;
-    }
-    #myCarousel a.carousel-control-prev {
-        left: 45%;
-    }
-    #myCarousel .carousel-control-prev:hover,
-    #myCarousel .carousel-control-prev:focus {
-        left: 40.5%;
-    }
-    .about .titlepage {
-        margin-right: 0;
-        padding-bottom: 30px;
-    }
-    .mar_top {
-        margin-top: 30px;
-    }
-    .gallery_text {
-        height: 264px;
-    }
-    .banner_design {
-        max-width: inherit;
-        padding-bottom: 117px;
-    }
-    #design .carousel-control-prev,
-    #design .carousel-control-next {
-        top: 65%;
-    }
-    #design a.carousel-control-prev {
-        left: 39%;
-    }
-    .mr_le figure {
-        margin-right: -13px !important;
-    }
-    .latest_news .news_box .news_img figure {
-        margin-left: -12px;
-    }
-    .Testimonial .titlepage h2 {
-        padding-top: 30px;
-    }
-    #testimon .carousel-control-prev,
-    #testimon .carousel-control-next {
-        top: 111%;
-    }
-    #testimon a.carousel-control-next {
-        right: 32%;
-    }
-    #testimon a.carousel-control-prev {
-        left: 36%;
-    }
-    .variat {
-        margin-bottom: 30px;
-    }
-    .main_form .send_btn {
-        margin-bottom: 30px;
-    }
-    .navigation.navbar {
-        float: right;
-        display: inherit !important;
-        padding: 0;
-        width: 100%;
-        padding-top: 0px !important;
-        margin-top: -31px;
-    }
-    .navigation .navbar-collapse {
-        background: #202020;
-        padding: 20px;
-        margin-top: 73px;
-        position: absolute;
-        width: 100%;
-        z-index: 999;
-    }
-    .navigation.navbar-dark .navbar-nav .nav-link {
-        padding: 10px 0;
-        color: #fff;
-    }
-    .navigation.navbar-dark .navbar-toggler {
-        border: inherit;
-        float: right;
-    }
-    .navigation.navbar-dark .navbar-toggler-icon {
-        background: url(../images/menu_icon.png);
-        background-repeat: no-repeat;
-    }
-    .d_none {
-        display: none;
-    }
-}
+  .logo img {
+    max-height: 68.5px !important;
+  }
 
-@media (max-width: 575px) {
-    .header {
-        height: 122px;
-    }
-   
-    .logo_section {
-      justify-content: center;
-   }
+  .navigation .navbar-collapse {
+    width: 260px !important;
+    max-width: calc(100vw - 20px) !important;
+  }
 
-   .navigation {
-      justify-content: center;
-   }
-
-    .logo {
-        padding-top: 5px;
-        float: left;
-        width: 140px;
-    }
-    .banner {
-        min-height: 550px;
-        padding-top: 37%;
-    }
-    .text-bg h1 {
-        font-size: 44px;
-        line-height: 55px;
-    }
-    #myCarousel a.carousel-control-next {
-        right: 32.5%;
-    }
-    #myCarousel .carousel-control-next:hover,
-    #myCarousel .carousel-control-next:focus {
-        right: 25%;
-    }
-    #myCarousel a.carousel-control-prev {
-        left: 45%;
-    }
-    #myCarousel .carousel-control-prev:hover,
-    #myCarousel .carousel-control-prev:focus {
-        left: 37.5%;
-    }
-    .about .titlepage {
-        margin-right: 0;
-        padding-bottom: 30px;
-    }
-    .mar_top {
-        margin-top: 0px;
-    }
-    .service_box {
-        margin-bottom: 30px;
-    }
-    .gallery_text {
-        height: 264px;
-        margin-bottom: 30px;
-    }
-    .titlepage h2 {
-        font-size: 28px;
-        line-height: 29px;
-    }
-    .latest_news .news_box .news_room ul li a {
-        padding-right: 3px;
-    }
-    .banner_design {
-        max-width: inherit;
-        padding-bottom: 117px;
-    }
-    #design .carousel-control-prev,
-    #design .carousel-control-next {
-        top: 65%;
-    }
-    #design a.carousel-control-prev {
-        left: 11%;
-    }
-    .mr_le figure {
-        margin-right: -13px !important;
-    }
-    .latest_news .news_box .news_img figure {
-        margin-left: -12px;
-    }
-    .banner_testimonial {
-        padding: 40px 7px;
-    }
-    .text_humai {
-        padding: 0 20px 40px 20px;
-    }
-    .Testimonial .titlepage h2 {
-        padding-top: 30px;
-    }
-    #testimon .carousel-control-prev,
-    #testimon .carousel-control-next {
-        top: 107%;
-    }
-    #testimon a.carousel-control-next {
-        right: 20%;
-    }
-    #testimon a.carousel-control-prev {
-        left: 22%;
-    }
-    ul.link_menu {
-        margin-bottom: 25px;
-    }
-    .variat {
-        margin-bottom: 30px;
-    }
-    .main_form .send_btn {
-        margin-bottom: 30px;
-    }
-    .navigation.navbar {
-        float: right;
-        display: inherit !important;
-        padding: 0;
-        width: 100%;
-    }
-    .navigation .navbar-collapse {
-        background: #282828;
-        padding: 20px;
-        margin-top: 1px;
-        position: absolute;
-        width: 100%;
-        margin-right: 20px;
-        z-index: 999;
-    }
-    .navigation.navbar-dark .navbar-nav .nav-link {
-        padding: 10px 0;
-        color: #fff;
-    }
-    .navigation.navbar-dark .navbar-toggler {
-        float: right;
-        border: inherit;
-        margin-top: -100px;
-    }
-    .navigation.navbar-dark .navbar-toggler-icon {
-        background: url(../images/menu_icon.png);
-        background-repeat: no-repeat;
-    }
-    .d_none {
-        display: none;
-    }
+  .navigation.navbar-dark .navbar-nav .nav-link {
+    font-size: 15px !important;
+    padding: 12px 15px !important;
+  }
 }

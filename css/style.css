@@ -377,54 +377,65 @@ button {
 .banner .carousel-indicators {
      display: none;
 }
+/*--------------------------------------------------------------------- slider controls - modified ---------------------------------------------------------------------*/
 
-#myCarousel .carousel-control-prev,
-#myCarousel .carousel-control-next {
-     width: 36px;
-     height: 36px;
-     background: #0d0c0c;
-     opacity: 1;
-     font-size: 25px;
-     color: #fff;
-     border-radius: 60px;
-     top: 97.6%;
+/*--------------------------------------------------------------------- slider controls - CHEVRON STYLE ---------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------
+  MAIN CAROUSEL ARROW STYLE (CHEVRON)
+---------------------------------------------------------------------*/
+.banner_main .carousel-control-prev,
+.banner_main .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 80px;
+    background-color: transparent !important; /* SIN fondo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+    z-index: 10;
 }
 
-#myCarousel .carousel-control-prev:hover,
-#myCarousel .carousel-control-next:hover,
-#myCarousel .carousel-control-prev:focus,
-#myCarousel .carousel-control-next:focus {
-     background: #116835;
-     color: #fff;
-     width: 57px;
-     height: 57px;
-     font-size: 30px;
-     top: 96%;
+.banner_main .carousel-control-prev:hover,
+.banner_main .carousel-control-next:hover {
+    opacity: 1;
 }
 
-#myCarousel a.carousel-control-prev {
-     position: absolute;
-     bottom: 10px;
-     left: 48%;
+.banner_main .carousel-control-prev {
+    left: 10px;
 }
 
-#myCarousel a.carousel-control-next {
-     position: absolute;
-     right: inherit;
-     bottom: 10px;
-     right: 46.5%;
+.banner_main .carousel-control-next {
+    right: 10px;
 }
 
-#myCarousel .carousel-control-prev:hover,
-#myCarousel .carousel-control-prev:focus {
-     left: 46.5%;
+.banner_main .carousel-control-prev::before,
+.banner_main .carousel-control-next::before {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 22px;
+    border-style: solid;
+    border-color: #fff;
+    border-width: 0 4px 4px 0;
 }
 
-#myCarousel .carousel-control-next:hover,
-#myCarousel .carousel-control-next:focus {
-     right: 45%;
+.banner_main .carousel-control-prev::before {
+    transform: rotate(135deg);
 }
 
+.banner_main .carousel-control-next::before {
+    transform: rotate(-45deg);
+}
+
+.banner_main .carousel-control-prev-icon,
+.banner_main .carousel-control-next-icon {
+    display: none !important;
+}
 
 /** end banner section **/
 
@@ -1264,3 +1275,4 @@ display: flex;
 align-items: center;
 justify-content: center;
 }
+
