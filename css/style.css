@@ -506,9 +506,9 @@ button {
      content: "";
      background: url(../images/vg.png);
      top: -46px;
-     height: 97%;
-     width: 452px;
-     right: 0;
+     height: 99%;
+     width: 470px;
+     right: 130px;
      border-radius: 5px;
 }
 
@@ -520,8 +520,8 @@ button {
      width: 100%;
      z-index: 9999;
      position: relative;
-     margin: -43px 193px;
-     top: -55px;
+     margin: -42px 50px;
+     top: -45px;
 }
 
 
@@ -1172,6 +1172,7 @@ ul.link_menu li a:hover {
   z-index: 15;
   display: flex;
   gap: 12px;
+  margin-bottom: -70px;
 }
 
 .carousel-indicators li {

@@ -1,34 +1,56 @@
 /*---------------------------------------------------------------------
 File Name: responsive.css
-Version: Corregida - Menú hacia la izquierda
+Version: Optimizada para móviles - iPhone, iPad, Surface
 ---------------------------------------------------------------------*/
 
 /*-------------------------------------------------------------------
-[ 1. ] Estilos para Tablets y Dispositivos Medianos (hasta 991px)
+[ 1. ] Estilos Base para Todos los Dispositivos
+-------------------------------------------------------------------*/
+
+/* Asegurar que las imágenes sean responsivas */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Contenedor principal */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/*-------------------------------------------------------------------
+[ 2. ] Tablets y Dispositivos Medianos (hasta 991px)
 -------------------------------------------------------------------*/
 @media (max-width: 991px) {
+  
   /* --- Header y Navegación --- */
   .header {
-    padding: 15px;
+    padding: 20px 15px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
 
   .logo_section {
     justify-content: flex-start;
+    margin-bottom: 0;
+  }
+
+  .logo img {
+    max-height: 60px;
+    width: auto;
   }
 
   .navigation.navbar {
-    float: right;
     padding-top: 0 !important;
     margin-top: 0;
   }
 
   .navigation .navbar-collapse {
     background: linear-gradient(135deg, #2d5a3d, #4a7c59);
-    padding: 25px 10px;
-    margin-top: 0px;
+    padding: 25px 20px;
+    margin-top: 10px;
     position: absolute;
-    width: 98%;
+    width: 100%;
     right: 0;
     z-index: 999;
     border-radius: 0 0 15px 15px;
@@ -36,34 +58,35 @@ Version: Corregida - Menú hacia la izquierda
   }
 
   .navigation.navbar-dark .navbar-nav .nav-link {
-    padding: 12px 0;
-    color: #fff;
+    padding: 15px 0;
+    color: #fff !important;
     margin: 0 15px;
     font-weight: 500;
     transition: all 0.3s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 10.5px;
+    font-size: 16px;
   }
 
   .navigation.navbar-dark .navbar-nav .nav-link:hover {
-    color: #c8e6c9;
+    color: #c8e6c9 !important;
     transform: translateX(5px);
   }
 
   .navigation.navbar-dark .navbar-toggler {
-    border: none;
-    background: none;
-    padding: 8px;
+    border: 2px solid #116835;
+    background: #116835;
+    padding: 8px 10px;
     border-radius: 8px;
     transition: all 0.3s ease;
   }
 
   .navigation.navbar-dark .navbar-toggler:hover {
-    background: rgba(17, 104, 53, 0.1);
+    background: #2d5a3d;
+    transform: scale(1.05);
   }
 
   .navigation.navbar-dark .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(17, 104, 53, 1)' stroke-width='2.5' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2.5' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     width: 24px;
     height: 24px;
   }
@@ -74,7 +97,22 @@ Version: Corregida - Menú hacia la izquierda
     line-height: 40px;
   }
 
-  /* --- Sección 'Nosotros' --- */
+  /* --- Banner Principal --- */
+  .banner_main .carousel-control-prev,
+  .banner_main .carousel-control-next {
+    width: 45px;
+    height: 45px;
+  }
+
+  .banner-title {
+    font-size: 2.2em;
+  }
+
+  .banner-subtitle {
+    font-size: 1.1em;
+  }
+
+  /* --- Sección About --- */
   .about .titlepage {
     margin: 0;
     padding: 20px;
@@ -83,43 +121,34 @@ Version: Corregida - Menú hacia la izquierda
 
   .about_img {
     padding: 20px;
+    text-align: center;
   }
 
   .about_img::before {
     display: none;
   }
 
-  /* --- Carrusel de Banner Principal --- */
-  .banner_main .carousel-item {
-    height: auto;
-  }
-
-  .banner_main .carousel-control-prev,
-  .banner_main .carousel-control-next {
-    width: 45px;
-    height: 45px;
-  }
-  .banner-title {
-    font-size: 2em;
-  }
-  .banner-subtitle {
-    font-size: 1em;
-  }
-
   /* --- Galería de Productos --- */
+  .gallery_img {
+    width: 100% !important;
+    height: 280px !important;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
   .gallery_text {
     height: auto;
     padding: 40px 20px;
   }
 
-  /* --- Sección 'Diseño' y 'Testimonios' (Carruseles) --- */
+  /* --- Carruseles --- */
   .design,
   .Testimonial {
-    padding-top: 40px;
+    padding-top: 60px;
   }
 
   .text_de {
-    padding: 20px;
+    padding: 30px 20px;
     text-align: center;
   }
 
@@ -127,9 +156,9 @@ Version: Corregida - Menú hacia la izquierda
   #design .carousel-control-next {
     top: 50%;
     transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    opacity: 0.7;
+    width: 50px;
+    height: 50px;
+    opacity: 0.8;
   }
 
   #design a.carousel-control-prev {
@@ -141,6 +170,10 @@ Version: Corregida - Menú hacia la izquierda
   }
 
   /* --- Noticias --- */
+  .latest_news .news_box .news_img {
+    height: 250px !important;
+  }
+
   .latest_news .news_box .news_img figure,
   .mr_le figure {
     margin: 0 !important;
@@ -156,32 +189,33 @@ Version: Corregida - Menú hacia la izquierda
   #testimon a.carousel-control-next {
     width: 50px;
     height: 50px;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
     top: auto;
     bottom: -70px;
   }
 
   #testimon a.carousel-control-prev {
-    left: 35%;
+    left: 40%;
     transform: translateX(-50%);
   }
 
   #testimon a.carousel-control-next {
-    right: 35%;
+    right: 40%;
     transform: translateX(50%);
   }
 
   .text_humai {
     margin-top: 30px;
   }
+
   .text_humai i img {
     margin-top: -40px;
     width: 80px;
   }
 
   .banner_testimonial {
-    padding-bottom: 10px;
+    padding-bottom: 80px;
   }
 
   /* --- Footer --- */
@@ -192,26 +226,26 @@ Version: Corregida - Menú hacia la izquierda
   ul.link_menu li {
     text-align: center;
   }
+
   .footer .col-md-3 {
     margin-bottom: 30px;
   }
 }
 
 /*-------------------------------------------------------------------
-[ 2. ] Estilos para Móviles (hasta 767px) - MENÚ HACIA LA IZQUIERDA
+[ 3. ] Móviles - iPhone, Android (hasta 767px)
 -------------------------------------------------------------------*/
 @media (max-width: 767px) {
-  /* --- Header Moderno y Profesional --- */
+  
+  /* --- Header Optimizado para Móviles --- */
   .header {
-    padding: 12px 15px;
-    height: auto;
+    padding: 15px;
     background: #ffffff;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
     position: relative;
     z-index: 1000;
   }
 
-  /* Contenedor flex para logo y hamburguesa */
   .header .row {
     display: flex !important;
     align-items: center !important;
@@ -220,7 +254,6 @@ Version: Corregida - Menú hacia la izquierda
     margin: 0 !important;
   }
 
-  /* Logo section */
   .header .logo_section {
     width: auto !important;
     flex: 1 !important;
@@ -236,11 +269,10 @@ Version: Corregida - Menú hacia la izquierda
   }
 
   .logo img {
-    max-height: 45px !important;
+    max-height: 50px !important;
     width: auto !important;
   }
 
-  /* Navegación - hamburguesa */
   .header .col-md-9 {
     width: auto !important;
     flex: 0 0 auto !important;
@@ -255,7 +287,7 @@ Version: Corregida - Menú hacia la izquierda
     position: relative !important;
   }
 
-  /* Botón hamburguesa moderno */
+  /* --- Botón Hamburguesa Mejorado --- */
   .navigation.navbar-dark .navbar-toggler {
     border: 2px solid #116835 !important;
     background: #116835 !important;
@@ -277,12 +309,12 @@ Version: Corregida - Menú hacia la izquierda
     height: 22px !important;
   }
 
-  /* SOLUCIÓN: Menú desplegable hacia la IZQUIERDA */
+  /* --- Menú Desplegable Optimizado --- */
   .navigation .navbar-collapse {
     position: absolute !important;
     top: calc(100% + 10px) !important;
     right: 0px !important;
-    width: 280px !important;
+    width: 300px !important;
     max-width: calc(100vw - 30px) !important;
     background: linear-gradient(135deg, #2d5a3d, #4a7c59) !important;
     padding: 25px 20px !important;
@@ -291,7 +323,7 @@ Version: Corregida - Menú hacia la izquierda
     border-radius: 15px !important;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    transform-origin: top left !important;
+    transform-origin: top right !important;
   }
 
   .navigation.navbar-dark .navbar-nav {
@@ -332,7 +364,53 @@ Version: Corregida - Menú hacia la izquierda
     font-weight: 600 !important;
   }
 
-  /* --- Mejoras generales de diseño --- */
+  /* --- Barra Superior de Contacto --- */
+  .top-contact-bar {
+    padding: 8px 0;
+  }
+
+  .top-contact-content {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 10px !important;
+    text-align: left !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .contact-info {
+    flex-direction: row !important;
+    gap: 15px !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+
+  .contact-item {
+    font-size: 12px !important;
+    white-space: nowrap !important;
+  }
+
+  .contact-item span {
+    display: none !important;
+  }
+
+  .contact-item i {
+    font-size: 16px !important;
+  }
+
+  .social-links {
+    justify-content: flex-end !important;
+    flex-shrink: 0 !important;
+    gap: 8px !important;
+  }
+
+  .social-link {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 14px !important;
+  }
+
+  /* --- Títulos y Texto --- */
   .titlepage h2 {
     font-size: 28px;
     line-height: 36px;
@@ -346,7 +424,7 @@ Version: Corregida - Menú hacia la izquierda
     color: #555;
   }
 
-  /* --- Secciones con mejor espaciado --- */
+  /* --- Espaciado de Secciones --- */
   .about,
   .service,
   .gallery,
@@ -370,8 +448,9 @@ Version: Corregida - Menú hacia la izquierda
   }
 
   .banner_main .banner-img {
-    height: auto;
+    height: 250px;
     width: 100%;
+    object-fit: cover;
   }
 
   .banner-title {
@@ -383,36 +462,154 @@ Version: Corregida - Menú hacia la izquierda
     display: none;
   }
 
-  /* --- Botones modernos --- */
-  .read_more {
-    background: linear-gradient(135deg, #116835, #2d5a3d) !important;
-    border: none !important;
-    border-radius: 25px !important;
-    padding: 12px 30px !important;
-    font-weight: 600 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.5px !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 4px 15px rgba(17, 104, 53, 0.3) !important;
+  .banner_main .carousel-control-prev,
+  .banner_main .carousel-control-next {
+    width: 40px;
+    height: 40px;
   }
 
-  .read_more:hover {
-    transform: translateY(-2px) !important;
-    box-shadow: 0 8px 25px rgba(17, 104, 53, 0.4) !important;
-    background: linear-gradient(135deg, #2d5a3d, #116835) !important;
+  /* --- Sección About --- */
+  .about .titlepage {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .about_img {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .about_img figure img {
+    margin: 0;
+    top: 0;
+  }
+
+  /* --- Galería de Productos --- */
+  .gallery_img {
+    width: 100% !important;
+    height: 250px !important;
+    max-width: none !important;
+    margin: 0 auto;
+  }
+
+  .product-title {
+    font-size: 1.1em !important;
+    padding: 0 5px !important;
   }
 
   /* --- Carruseles --- */
+  .design .carousel-item .row {
+    flex-direction: column;
+  }
+
   .design .carousel-item .col-md-6 {
     flex: 0 0 100%;
     max-width: 100%;
+    order: 2;
+  }
+
+  .design .carousel-item .col-md-6:first-child {
+    order: 1;
   }
 
   .text_de {
     padding: 30px 20px;
+    text-align: center;
   }
 
-  /* --- Formulario de contacto --- */
+  #design .carousel-control-prev,
+  #design .carousel-control-next {
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  #design a.carousel-control-prev {
+    left: 10px;
+  }
+
+  #design a.carousel-control-next {
+    right: 10px;
+  }
+
+  /* --- Video Section --- */
+  .video-section {
+    padding: 0 0;
+  }
+
+  .embed-responsive {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  /* --- Marcas --- */
+  .marcas img {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  /* --- Noticias --- */
+  .latest_news .news_box {
+    margin-bottom: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .latest_news .news_box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  }
+
+  .latest_news .news_box .news_img {
+    height: 200px !important;
+  }
+
+  .latest_news .news_box .news_room {
+    padding: 20px;
+  }
+
+  .latest_news .news_box .news_room h3 {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  #newsCarousel .carousel-control-prev,
+  #newsCarousel .carousel-control-next {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(17, 104, 53, 0.8);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  #newsCarousel .carousel-control-prev {
+    left: 10px;
+  }
+
+  #newsCarousel .carousel-control-next {
+    right: 10px;
+  }
+
+  /* --- Formulario de Contacto --- */
+  .contact {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .main_form .contactus,
+  .main_form .textarea {
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    margin-bottom: 20px;
+  }
+
   .main_form .send_btn {
     width: 100%;
     max-width: none;
@@ -422,6 +619,7 @@ Version: Corregida - Menú hacia la izquierda
     padding: 15px !important;
     font-weight: 600 !important;
     transition: all 0.3s ease !important;
+    font-size: 18px;
   }
 
   .main_form .send_btn:hover {
@@ -436,51 +634,70 @@ Version: Corregida - Menú hacia la izquierda
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   }
 
-  /* --- Barra superior de contacto - UNA LÍNEA EN MÓVIL --- */
-  .top-contact-content {
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    gap: 15px !important;
-    text-align: left !important;
-    flex-wrap: nowrap !important;
+  .map-responsive iframe {
+    border-radius: 15px;
   }
 
-  .contact-info {
-    flex-direction: row !important;
-    gap: 20px !important;
-    flex: 1 !important;
-    min-width: 0 !important;
+  /* --- Botones Mejorados --- */
+  .read_more {
+    background: linear-gradient(135deg, #116835, #2d5a3d) !important;
+    border: none !important;
+    border-radius: 25px !important;
+    padding: 12px 30px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(17, 104, 53, 0.3) !important;
+    display: inline-block;
+    text-align: center;
   }
 
-  .contact-item {
-    font-size: 13px !important;
-    white-space: nowrap !important;
+  .read_more:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(17, 104, 53, 0.4) !important;
+    background: linear-gradient(135deg, #2d5a3d, #116835) !important;
+    color: #fff !important;
   }
 
-  .contact-item span {
-    display: none !important;
+  /* --- Footer --- */
+  .footer {
+    padding-top: 60px;
   }
 
-  .contact-item i {
-    font-size: 16px !important;
+  .footer h5 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
   }
 
-  .social-links {
-    justify-content: flex-end !important;
-    flex-shrink: 0 !important;
-    gap: 8px !important;
+  .footer .col-md-3 {
+    margin-bottom: 40px;
+    text-align: center;
   }
 
-  .social-link {
-    width: 32px !important;
-    height: 32px !important;
-    font-size: 16px !important;
+  .footer p,
+  .footer ul li {
+    text-align: center;
   }
 
-  /* --- Cards y elementos con sombras --- */
+  .footer ul.list-unstyled li {
+    margin-bottom: 8px;
+  }
+
+  .footer ul.list-unstyled li a {
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+
+  .footer ul.list-unstyled li a:hover {
+    color: #c8e6c9 !important;
+    transform: translateX(5px);
+  }
+
+  /* --- Animaciones y Transiciones --- */
+  .gallery_item-content,
   .news_box,
-  .gallery_img,
   .about_img {
     border-radius: 15px !important;
     overflow: hidden !important;
@@ -488,30 +705,181 @@ Version: Corregida - Menú hacia la izquierda
     transition: all 0.3s ease !important;
   }
 
-  .news_box:hover,
-  .gallery_img:hover {
+  .gallery_item-content:hover,
+  .news_box:hover {
     transform: translateY(-5px) !important;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
   }
 }
 
-/* Pantallas muy pequeñas */
+/*-------------------------------------------------------------------
+[ 4. ] Pantallas Muy Pequeñas - iPhone SE, etc. (hasta 480px)
+-------------------------------------------------------------------*/
 @media (max-width: 480px) {
+  
   .header {
-    padding: 10px 12px;
+    padding: 12px;
   }
 
   .logo img {
-    max-height: 68.5px !important;
+    max-height: 45px !important;
   }
 
   .navigation .navbar-collapse {
-    width: 260px !important;
+    width: 280px !important;
     max-width: calc(100vw - 20px) !important;
   }
 
   .navigation.navbar-dark .navbar-nav .nav-link {
     font-size: 15px !important;
     padding: 12px 15px !important;
+  }
+
+  .titlepage h2 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .banner_main .banner-img {
+    height: 167px;
+  }
+
+  .gallery_img {
+    height: 200px !important;
+  }
+
+  .latest_news .news_box .news_img {
+    height: 180px !important;
+  }
+
+  .contact-item {
+    font-size: 11px !important;
+  }
+
+  .social-link {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 12px !important;
+  }
+}
+
+/*-------------------------------------------------------------------
+[ 5. ] iPad y Tablets en Orientación Horizontal (768px - 1024px)
+-------------------------------------------------------------------*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  .header {
+    padding: 25px 20px;
+  }
+
+  .logo img {
+    max-height: 65px;
+  }
+
+  .titlepage h2 {
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  .gallery_img {
+    width: 100% !important;
+    height: 300px !important;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .banner_main .banner-img {
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .latest_news .news_box .news_img {
+    height: 220px !important;
+  }
+
+  .text_de {
+    padding: 40px 30px;
+  }
+
+  /* Ajustes específicos para iPad */
+  .navigation .navbar-collapse {
+    width: 350px !important;
+    max-width: calc(100vw - 40px) !important;
+  }
+
+  .navigation.navbar-dark .navbar-nav .nav-link {
+    font-size: 17px !important;
+    padding: 18px 25px !important;
+  }
+}
+
+/*-------------------------------------------------------------------
+[ 6. ] Surface y Tablets Grandes (1024px - 1200px)
+-------------------------------------------------------------------*/
+@media (min-width: 1025px) and (max-width: 1200px) {
+  
+  .container {
+    max-width: 960px;
+  }
+
+  .header {
+    padding: 30px 25px;
+  }
+
+  .logo img {
+    max-height: 70px;
+  }
+
+  .titlepage h2 {
+    font-size: 38px;
+    line-height: 44px;
+  }
+
+  .gallery_img {
+    width: 320px !important;
+    height: 320px !important;
+  }
+
+  .banner_main .banner-img {
+    height: 500px;
+    object-fit: cover;
+  }
+
+  .latest_news .news_box .news_img {
+    height: 240px !important;
+  }
+}
+
+/*-------------------------------------------------------------------
+[ 7. ] Mejoras Generales de Accesibilidad y UX
+-------------------------------------------------------------------*/
+
+/* Focus states mejorados */
+.navigation.navbar-dark .navbar-nav .nav-link:focus,
+.read_more:focus,
+.main_form .send_btn:focus {
+  outline: 3px solid #c8e6c9;
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Transiciones suaves para todos los elementos interactivos */
+a, button, .gallery_item-content, .news_box {
+  transition: all 0.3s ease;
+}
+
+/* Asegurar que el contenido no se corte en pantallas pequeñas */
+* {
+  box-sizing: border-box;
+}
+
+/* Prevenir zoom horizontal en móviles */
+@media (max-width: 767px) {
+  body {
+    overflow-x: hidden;
   }
 }
