@@ -43,26 +43,76 @@
         .social-link,
         .contact-item,
         footer .text-white,
-        .gallery_img figure {
+        .gallery_item-content { /* Aplicamos transición al nuevo contenedor */
             transition: all 0.3s ease-in-out;
         }
 
-        /* Efecto hover para imágenes de la galería: zoom sutil */
-        .gallery_img {
+        /* Efecto hover para la tarjeta del producto: zoom sutil y sombra */
+        .gallery_item-content {
+            border-radius: 15px; /* Bordes redondeados */
             overflow: hidden; /* Asegura que el zoom no se salga del contenedor */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            display: flex; /* Para organizar la imagen y el título */
+            flex-direction: column; /* Apilar imagen y título */
+            align-items: center; /* Centrar contenido */
+            padding-bottom: 15px; /* Espacio para el título */
+            background-color: #fff; /* Fondo blanco para el contenido */
         }
-        .gallery_img:hover {
+        .gallery_item-content:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
         }
 
+        .gallery_img {
+            /* Modificaciones para asegurar 360x360 y evitar el corte */
+            width: 360px; 
+            height: 360px; 
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .gallery_img figure {
+            margin: 0; /* Elimina el margen por defecto de figure */
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         .gallery_img figure img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Cambiado a 'contain' para que la imagen no se corte */
             transition: transform 0.35s ease-in-out;
         }
 
-        .gallery_img:hover figure img {
+        .gallery_item-content:hover .gallery_img figure img {
             transform: scale(1.1); /* Efecto de zoom dentro de la figura */
         }
+
+        /* Estilo para el título del producto */
+        .product-title {
+            text-align: center;
+            margin-top: 15px; /* Más espacio arriba */
+            margin-bottom: 0; /* Elimina margen inferior por defecto */
+            font-size: 1.2em; /* Un poco más grande */
+            font-weight: 600; /* Un poco más de peso */
+            color: #116835; /* Un color más oscuro para mayor legibilidad, quizás el verde corporativo */
+            padding: 0 10px; /* Padding horizontal para evitar que el texto se pegue a los bordes */
+        }
+
+        /* Ajustes para el enlace del producto */
+        .product-link {
+            text-decoration: none; /* Quita el subrayado por defecto del enlace */
+            color: inherit; /* Hereda el color del texto para que no sea azul */
+            display: block; /* Hace que el enlace ocupe todo el espacio de la columna */
+            height: 100%; /* Asegura que la tarjeta se estire si es necesario */
+        }
+        .product-link:hover {
+            text-decoration: none; /* Asegura que no aparezca subrayado en hover */
+        }
+
 
         /* Efecto hover para íconos sociales y de contacto */
         .social-link:hover,
@@ -159,110 +209,214 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 col-sm-6 animate-on-scroll">
-                    <div class="gallery_img">
-                        <figure><img src="images/nulat.jpg" alt="#" /></figure>
-                    </div>
+                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll"> <a href="nulat.html" class="product-link">
+                        <div class="gallery_item-content">
+                            <div class="gallery_img">
+                                <figure><img src="images/nulat.jpg" alt="Nulat" /></figure>
+                            </div>
+                            <h3 class="product-title">Nulat</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-sm-6 animate-on-scroll">
-                    <div class="gallery_img">
-                        <figure><img src="images/lider-avenainstantanea.jpg" alt="#" /></figure>
-                    </div>
+                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                    <a href="lider-avenainstantanea.html" class="product-link">
+                        <div class="gallery_item-content">
+                            <div class="gallery_img">
+                                <figure><img src="images/lider-avenainstantanea.jpg" alt="Líder Avena Instantánea" /></figure>
+                            </div>
+                            <h3 class="product-title">Líder Avena Instantánea</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-sm-6 animate-on-scroll">
-                    <div class="gallery_img">
-                        <figure><img src="images/lider-avenamolida.jpg" alt="#" /></figure>
-                    </div>
+                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                    <a href="lider-avenamolida.html" class="product-link">
+                        <div class="gallery_item-content">
+                            <div class="gallery_img">
+                                <figure><img src="images/lider-avenamolida.jpg" alt="Líder Avena Molida" /></figure>
+                            </div>
+                            <h3 class="product-title">Líder Avena Molida</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-sm-6 animate-on-scroll">
-                    <div class="gallery_img">
-                        <figure><img src="images/lider-avenas.jpg" alt="#" /></figure>
-                    </div>
+                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                    <a href="lider-avenas.html" class="product-link">
+                        <div class="gallery_item-content">
+                            <div class="gallery_img">
+                                <figure><img src="images/lider-avenas.jpg" alt="Líder Avenas" /></figure>
+                            </div>
+                            <h3 class="product-title">Líder Avenas</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-sm-6 animate-on-scroll">
-                    <div class="gallery_img">
-                        <figure><img src="images/lider-cocoaenpolvo.jpg" alt="#" /></figure>
-                    </div>
+                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                    <a href="lider-cocoaenpolvo.html" class="product-link">
+                        <div class="gallery_item-content">
+                            <div class="gallery_img">
+                                <figure><img src="images/lider-cocoaenpolvo.jpg" alt="Líder Cocoa en Polvo" /></figure>
+                            </div>
+                            <h3 class="product-title">Líder Cocoa en Polvo</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-sm-6 animate-on-scroll">
-                    <div class="gallery_img">
-                        <figure><img src="images/renacare.jpg" alt="#" /></figure>
-                    </div>
+                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                    <a href="renacare.html" class="product-link">
+                        <div class="gallery_item-content">
+                            <div class="gallery_img">
+                                <figure><img src="images/renacare.jpg" alt="Renacare" /></figure>
+                            </div>
+                            <h3 class="product-title">Renacare</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-sm-6 animate-on-scroll">
-                    <div class="gallery_img">
-                        <figure><img src="images/lider-lecheenteraenpolvo6.4L.jpg" alt="#" /></figure>
-                    </div>
+                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                    <a href="lider-lecheenteraenpolvo6.4L.html" class="product-link">
+                        <div class="gallery_item-content">
+                            <div class="gallery_img">
+                                <figure><img src="images/lider-lecheenteraenpolvo6.4L.jpg" alt="Líder Leche Entera en Polvo 6.4L" /></figure>
+                            </div>
+                            <h3 class="product-title">Líder Leche Entera en Polvo 6.4L</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-sm-6 animate-on-scroll">
-                    <div class="gallery_img">
-                        <figure><img src="images/lider-lecheenteraenpolvo12L.jpg" alt="#" /></figure>
-                    </div>
+                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                    <a href="lider-lecheenteraenpolvo12L.html" class="product-link">
+                        <div class="gallery_item-content">
+                            <div class="gallery_img">
+                                <figure><img src="images/lider-lecheenteraenpolvo12L.jpg" alt="Líder Leche Entera en Polvo 12L" /></figure>
+                            </div>
+                            <h3 class="product-title">Líder Leche Entera en Polvo 12L</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-sm-6 animate-on-scroll">
-                    <div class="gallery_img">
-                        <figure><img src="images/lideravenaintegral.jpg" alt="#" /></figure>
-                    </div>
+                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                    <a href="lideravenaintegral.html" class="product-link">
+                        <div class="gallery_item-content">
+                            <div class="gallery_img">
+                                <figure><img src="images/lideravenaintegral.jpg" alt="Líder Avena Integral" /></figure>
+                            </div>
+                            <h3 class="product-title">Líder Avena Integral</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-sm-6 animate-on-scroll">
-                    <div class="gallery_img">
-                        <figure><img src="images/lider-avenainstantanea.jpg" alt="#" /></figure>
-                    </div>
+                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                    <a href="lider-avenainstantanea-2.html" class="product-link">
+                        <div class="gallery_item-content">
+                            <div class="gallery_img">
+                                <figure><img src="images/lider-avenainstantanea.jpg" alt="Líder Avena Instantánea" /></figure>
+                            </div>
+                            <h3 class="product-title">Líder Avena Instantánea</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-sm-6 animate-on-scroll">
-                    <div class="gallery_img">
-                        <figure><img src="images/wala-avenainstantanea.jpg" alt="#" /></figure>
-                    </div>
+                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                    <a href="wala-avenainstantanea.html" class="product-link">
+                        <div class="gallery_item-content">
+                            <div class="gallery_img">
+                                <figure><img src="images/wala-avenainstantanea.jpg" alt="Wala Avena Instantánea" /></figure>
+                            </div>
+                            <h3 class="product-title">Wala Avena Instantánea</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-sm-6 animate-on-scroll">
-                    <div class="gallery_img">
-                        <figure><img src="images/wala-avenaintegral.jpg" alt="#" /></figure>
-                    </div>
+                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                    <a href="wala-avenaintegral.html" class="product-link">
+                        <div class="gallery_item-content">
+                            <div class="gallery_img">
+                                <figure><img src="images/wala-avenaintegral.jpg" alt="Wala Avena Integral" /></figure>
+                            </div>
+                            <h3 class="product-title">Wala Avena Integral</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-sm-6 animate-on-scroll">
-                    <div class="gallery_img">
-                        <figure><img src="images/wala-avenamolida.jpg" alt="#" /></figure>
-                    </div>
+                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                    <a href="wala-avenamolida.html" class="product-link">
+                        <div class="gallery_item-content">
+                            <div class="gallery_img">
+                                <figure><img src="images/wala-avenamolida.jpg" alt="Wala Avena Molida" /></figure>
+                            </div>
+                            <h3 class="product-title">Wala Avena Molida</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-sm-6 animate-on-scroll">
-                    <div class="gallery_img">
-                        <figure><img src="images/zerca-granolablanco.png" alt="#" /></figure>
-                    </div>
+                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                    <a href="zerca-granolablanco.html" class="product-link">
+                        <div class="gallery_item-content">
+                            <div class="gallery_img">
+                                <figure><img src="images/zerca-granolablanco.png" alt="Zerca Granola Blanco" /></figure>
+                            </div>
+                            <h3 class="product-title">Zerca Granola Blanco</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-sm-6 animate-on-scroll">
-                    <div class="gallery_img">
-                        <figure><img src="images/lider-avenainstantanea.jpg" alt="#" /></figure>
-                    </div>
+                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                    <a href="lider-avenainstantanea-3.html" class="product-link">
+                        <div class="gallery_item-content">
+                            <div class="gallery_img">
+                                <figure><img src="images/lider-avenainstantanea.jpg" alt="Líder Avena Instantánea" /></figure>
+                            </div>
+                            <h3 class="product-title">Líder Avena Instantánea</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-sm-6 animate-on-scroll">
-                    <div class="gallery_img">
-                        <figure><img src="images/lider-avenainstantanea.jpg" alt="#" /></figure>
-                    </div>
+                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                    <a href="lider-avenainstantanea-4.html" class="product-link">
+                        <div class="gallery_item-content">
+                            <div class="gallery_img">
+                                <figure><img src="images/lider-avenainstantanea.jpg" alt="Líder Avena Instantánea" /></figure>
+                            </div>
+                            <h3 class="product-title">Líder Avena Instantánea</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-sm-6 animate-on-scroll">
-                    <div class="gallery_img">
-                        <figure><img src="images/wala-lecheenteraenpolvo325g.jpg" alt="#" /></figure>
-                    </div>
+                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                    <a href="wala-lecheenteraenpolvo325g.html" class="product-link">
+                        <div class="gallery_item-content">
+                            <div class="gallery_img">
+                                <figure><img src="images/wala-lecheenteraenpolvo325g.jpg" alt="Wala Leche Entera en Polvo 325g" /></figure>
+                            </div>
+                            <h3 class="product-title">Wala Leche Entera en Polvo 325g</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-sm-6 animate-on-scroll">
-                    <div class="gallery_img">
-                        <figure><img src="images/wala-lecheenteraenpolvo2200g.jpg" alt="#" /></figure>
-                    </div>
+                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                    <a href="wala-lecheenteraenpolvo2200g.html" class="product-link">
+                        <div class="gallery_item-content">
+                            <div class="gallery_img">
+                                <figure><img src="images/wala-lecheenteraenpolvo2200g.jpg" alt="Wala Leche Entera en Polvo 2200g" /></figure>
+                            </div>
+                            <h3 class="product-title">Wala Leche Entera en Polvo 2200g</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-sm-6 animate-on-scroll">
-                    <div class="gallery_img">
-                        <figure><img src="images/wala-pancakesblanco.png" alt="#" /></figure>
-                    </div>
+                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                    <a href="wala-pancakesblanco.html" class="product-link">
+                        <div class="gallery_item-content">
+                            <div class="gallery_img">
+                                <figure><img src="images/wala-pancakesblanco.png" alt="Wala Pancakes Blanco" /></figure>
+                            </div>
+                            <h3 class="product-title">Wala Pancakes Blanco</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-sm-6 animate-on-scroll">
-                    <div class="gallery_img">
-                        <figure><img src="images/vidalac-adultosblanco.png" alt="#" /></figure>
-                    </div>
+                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                    <a href="vidalac-adultosblanco.html" class="product-link">
+                        <div class="gallery_item-content">
+                            <div class="gallery_img">
+                                <figure><img src="images/vidalac-adultosblanco.png" alt="Vidalac Adultos Blanco" /></figure>
+                            </div>
+                            <h3 class="product-title">Vidalac Adultos Blanco</h3>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 col-sm-6 animate-on-scroll">
-                    <div class="gallery_img">
-                        <figure><img src="images/nutricaoblanco.png" alt="#" /></figure>
-                    </div>
+                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                    <a href="nutricaoblanco.html" class="product-link">
+                        <div class="gallery_item-content">
+                            <div class="gallery_img">
+                                <figure><img src="images/nutricaoblanco.png" alt="Nutricao Blanco" /></figure>
+                            </div>
+                            <h3 class="product-title">Nutricao Blanco</h3>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

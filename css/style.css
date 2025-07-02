@@ -262,7 +262,7 @@ button {
 /*-- navigation--*/
 
 .navigation {
-   width: 100%;
+   width: 103%;
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -271,7 +271,7 @@ button {
 .navigation.navbar {
      font-family: 'Open Sans', sans-serif;
      float: right;
-     padding-top: 60px !important;
+     padding-top: 25px !important;
      padding: 0;
 }
 
@@ -479,7 +479,7 @@ button {
 
 .about .titlepage {
      text-align: left;
-     margin-top: 41%;
+     margin-top: 9%;
      padding-bottom: 0;
      margin-right: -20px;
 }
@@ -505,8 +505,8 @@ button {
      position: absolute;
      content: "";
      background: url(../images/vg.png);
-     top: 0;
-     height: 100%;
+     top: -46px;
+     height: 97%;
      width: 452px;
      right: 0;
      border-radius: 5px;
@@ -520,6 +520,8 @@ button {
      width: 100%;
      z-index: 9999;
      position: relative;
+     margin: -43px 193px;
+     top: -55px;
 }
 
 
@@ -660,7 +662,7 @@ button {
      opacity: 1;
      font-size: 35px;
      color: #fff;
-     top: 97%;
+     top: 101%;
 }
 
 #design .carousel-control-prev:hover,
@@ -697,6 +699,7 @@ button {
 
 .latest_news {
      padding: 80px 0 50px 0;
+     background: #eae7e7;
 }
 
 .latest_news .titlepage {
@@ -1137,7 +1140,7 @@ ul.link_menu li a:hover {
 }
 
 .design {
-  margin-bottom: 80px; /* espacio entre secciones */
+  margin-bottom: 110px; /* espacio entre secciones */
 }
 
 #marcas {
@@ -1261,3 +1264,82 @@ display: flex;
 align-items: center;
 justify-content: center;
 }
+
+
+/* --- Estilos Mejorados para la Sección de Noticias --- */
+
+/* Contenedor de la imagen para forzar un tamaño uniforme */
+.latest_news .news_box .news_img {
+    height: 300px; /* Altura fija para todas las imágenes */
+    overflow: hidden;
+    position: relative;
+    background-color: #f0f0f0; /* Color de fondo mientras carga la imagen */
+}
+
+/* Ajusta la imagen para que cubra el contenedor sin deformarse */
+.latest_news .news_box .news_img figure,
+.latest_news .news_box .news_img figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Clave para mantener la proporción y rellenar el espacio */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* --- Estilos para los Controles del Carrusel de Noticias --- */
+
+#newsCarousel .carousel-control-prev,
+#newsCarousel .carousel-control-next {
+    background-color: rgba(17, 104, 53, 0.7); /* Fondo semitransparente con el color verde corporativo */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Forma circular */
+    top: 50%; /* Alineación vertical al centro */
+    transform: translateY(-50%);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+#newsCarousel .carousel-control-prev:hover,
+#newsCarousel .carousel-control-next:hover {
+    background-color: rgba(17, 104, 53, 1); /* Color sólido al pasar el mouse */
+    opacity: 1;
+}
+
+/* Posicionamiento de las flechas fuera del contenido para un look más limpio */
+#newsCarousel .carousel-control-prev {
+    left: -25px;
+}
+
+#newsCarousel .carousel-control-next {
+    right: -25px;
+}
+
+/* Ajuste del ícono de la flecha */
+#newsCarousel .carousel-control-prev-icon,
+#newsCarousel .carousel-control-next-icon {
+    background-size: 50%;
+    filter: brightness(0) invert(1); /* Asegura que el ícono sea blanco */
+}
+
+/* --- Ajustes para Dispositivos Móviles --- */
+@media (max-width: 991px) {
+    /* Mueve las flechas dentro del carrusel en pantallas más pequeñas */
+    #newsCarousel .carousel-control-prev {
+        left: 15px;
+    }
+
+    #newsCarousel .carousel-control-next {
+        right: 15px;
+    }
+    
+    /* Reduce la altura de la imagen en dispositivos móviles */
+    .latest_news .news_box .news_img {
+        height: 220px;
+    }
+}
+
+/* Estilos para la sección de video */
+.video-section {
+    background-color: #eae7e7;
+    /* Puedes añadir más estilos aquí si es necesario, como padding o altura mínima */}

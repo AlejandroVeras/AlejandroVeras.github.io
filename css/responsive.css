@@ -25,10 +25,10 @@ Version: Corregida - Menú hacia la izquierda
 
   .navigation .navbar-collapse {
     background: linear-gradient(135deg, #2d5a3d, #4a7c59);
-    padding: 25px 20px;
+    padding: 25px 10px;
     margin-top: 0px;
     position: absolute;
-    width: 85%;
+    width: 98%;
     right: 0;
     z-index: 999;
     border-radius: 0 0 15px 15px;
