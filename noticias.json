@@ -1,0 +1,65 @@
+[
+  {
+    "titulo": "Leche Fortificada: Nutrición para Todos",
+    "fecha": "2025-06-29",
+    "imagen": "images/lechefortificada.jpeg",
+    "resumen": "La leche fortificada ayuda a combatir deficiencias nutricionales. Su consumo es recomendado por la OMS, especialmente para niños y adultos mayores.",
+    "link": "noticia-lechefortificada.html"
+  },
+  {
+    "titulo": "Avena con Leche: Tu Dosis Diaria de Bienestar",
+    "fecha": "2025-06-25",
+    "imagen": "images/avenaconleche.jpg",
+    "resumen": "La combinación de avena y leche es un potente superalimento que aporta fibra, antioxidantes, proteínas y calcio esenciales para una vida saludable.",
+    "link": "noticia-avena-leche.html"
+  },
+  {
+    "titulo": "Rehidratación Post-Ejercicio: El Papel de la Leche",
+    "fecha": "2025-05-20",
+    "imagen": "images/lecherehidratacionpostejercicio.jpg",
+    "resumen": "La leche, por su contenido de agua y electrolitos, es excelente para la recuperación tras el ejercicio. Sus nutrientes ayudan a la absorción óptima y prevención de lesiones.",
+    "link": "noticia-rehidratacion-postejercicio.html"
+  },
+  {
+    "titulo": "Leche Entera vs. Desnatada: El Mito de las Calorías",
+    "fecha": "2024-05-10",
+    "imagen": "images/vasodeleche.jpg",
+    "resumen": "Descubre las diferencias entre la leche entera y desnatada, y cómo elegir la mejor opción según tus necesidades y preferencias.",
+    "link": "noticia-leche-entera-vs-desnatada.html"
+  },
+  {
+    "titulo": "Lácteos: Fuente Vital de Salud y Prevención",
+    "fecha": "2024-04-05",
+    "imagen": "images/lacteos.png",
+    "resumen": "Los productos lácteos aportan proteínas, calcio y vitaminas esenciales, ayudando a prevenir enfermedades óseas y cardiovasculares.",
+    "link": "noticia-lacteos-fuentes-vital.html"
+  },
+  {
+    "titulo": "Nuestro Gerente General Representa al País en Asamblea de FEPALE",
+    "fecha": "2023-12-01",
+    "imagen": "images/Noticia1.jpg",
+    "resumen": "En la 31 Asamblea Anual de FEPALE, nuestro gerente general participó activamente representando a la empresa y al país.",
+    "link": "noticia-fepale.html"
+  },
+  {
+    "titulo": "¡Estamos Certificados! Somos Operador Económico Autorizado",
+    "fecha": "2022-03-02",
+    "imagen": "images/Noticia2.jpg",
+    "resumen": "Recibimos la certificación como Operador Económico Autorizado, siendo reconocidos como importador confiable en República Dominicana.",
+    "link": "noticia-oea.html"
+  },
+  {
+    "titulo": "Los Lácteos: Esenciales para tu Salud Diaria",
+    "fecha": "2022-02-15",
+    "imagen": "images/LACTEOS.jpeg",
+    "resumen": "Los lácteos son fundamentales en la alimentación diaria por sus proteínas, calcio y vitaminas esenciales para niños y adultos.",
+    "link": "noticia-lacteos1.html"
+  },
+  {
+    "titulo": "Hugo Socorro Impulsa la Transformación Láctea en el Consejo de Conaleche",
+    "fecha": "2020-10-08",
+    "imagen": "images/noticiaconaleche.png",
+    "resumen": "Nuestro gerente general participa en la primera reunión del Consejo directivo del Conaleche, apoyando la creación de un nuevo reglamento para el sector lácteo.",
+    "link": "noticia-conaleche.html"
+  }
+]

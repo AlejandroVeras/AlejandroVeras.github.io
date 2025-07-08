@@ -58,8 +58,6 @@
          text-shadow: 0px 2px 6px rgba(0,0,0,0.08);
       }
    </style>
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="main-layout in_page">
 
@@ -131,23 +129,19 @@
       <div class="container">
          <div class="row justify-content-center">
             <div class="col-lg-8 col-md-10">
-               <article class="news_box p-4" data-aos="fade-up" data-aos-duration="800">
-                  <div class="gallery_img-producto" data-aos="zoom-in" data-aos-delay="200">
+               <article class="news_box p-4">
+                  <div class="gallery_img-producto">
                      <figure>
                         <img src="images/nutricaoblanco.png" alt="Nutricaoblanco" />
                      </figure>
                   </div>
-                  <div class="news_room" data-aos="fade-up" data-aos-delay="400">
+                  <div class="news_room">
                      <h1 class="product-highlight mb-3">Nutricao</h1>
                      <p>
                         <strong>Descripción:</strong> <br>
                         Aquí va la descripción del producto Nutricao.<br>
                         (Puedes detallar el uso, ventajas, presentaciones, etc.)
                      </p>
-                     <hr>
-                     <h3 class="mb-2">Ficha Técnica</h3>
-                     <div style="background:#f7f7f7;padding:18px; border-radius:10px;">
-                        <p>Pendiente de completar con ficha técnica.</p>
                      </div>
                      <a class="read_more mt-4" href="productos.html">← Volver a Productos</a>
                   </div>
@@ -200,16 +194,5 @@
    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
    <script src="js/custom.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-    <!-- AOS Animation Library -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true,
-            mirror: false
-        });
-    </script>
 </body>
 </html>
