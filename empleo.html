@@ -31,7 +31,9 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 
       
-   </head>
+       <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
 
 <body class="main-layout">
     <!-- loader  -->
@@ -123,13 +125,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="titlepage">
+                    <div class="titlepage" data-aos="fade-up" data-aos-duration="800">
                         <h2>Formulario de Empleo</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 offset-md-3">
+                <div class="col-md-6 offset-md-3" data-aos="fade-up" data-aos-delay="300">
                 <!-- Formulario -->
 <form 
   id="empleoForm" 
@@ -230,6 +232,17 @@ Santo Domingo Este, Rep. Dominicana</p>
     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="js/custom.js"></script>
 
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+    </script>
 </body>
 
 </html>

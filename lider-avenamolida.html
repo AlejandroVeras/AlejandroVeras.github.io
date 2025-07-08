@@ -58,6 +58,8 @@
          text-shadow: 0px 2px 6px rgba(0,0,0,0.08);
       }
    </style>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="main-layout in_page">
 
@@ -129,13 +131,13 @@
       <div class="container">
          <div class="row justify-content-center">
             <div class="col-lg-8 col-md-10">
-               <article class="news_box p-4">
-                  <div class="gallery_img-producto">
+               <article class="news_box p-4" data-aos="fade-up" data-aos-duration="800">
+                  <div class="gallery_img-producto" data-aos="zoom-in" data-aos-delay="200">
                      <figure>
                         <img src="images/lider-avenamolida.jpg" alt="Líder Avena Molida" />
                      </figure>
                   </div>
-                  <div class="news_room">
+                  <div class="news_room" data-aos="fade-up" data-aos-delay="400">
                      <h1 class="product-highlight mb-3">Líder Avena Molida</h1>
                      <p>
                         <strong>Descripción:</strong> <br>
@@ -198,5 +200,16 @@
    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
    <script src="js/custom.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+    </script>
 </body>
 </html>

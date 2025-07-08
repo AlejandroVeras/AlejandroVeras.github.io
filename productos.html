@@ -17,20 +17,9 @@
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        /* Estilo base para los elementos que se animarán al hacer scroll */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        /* Estilo que se aplicará cuando el elemento sea visible */
-        .animate-on-scroll.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
         /* Efecto de aparición escalonada para los productos de la galería */
         .gallery .row .col-md-4 {
              transition-delay: var(--delay, 0s);
@@ -201,7 +190,7 @@
     <div class="gallery">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 animate-on-scroll">
+                <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
                     <div class="titlepage">
                         <h2>Nuestros <span class="green">Productos</span></h2>
                         <p> Alimentos lácteos funcionales y naturales de máxima calidad y valor agregado, enfocados en la nutrición y salud.</p>
@@ -209,7 +198,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll"> <a href="nulat.html" class="product-link">
+                <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="200"> <a href="nulat.html" class="product-link">
                         <div class="gallery_item-content">
                             <div class="gallery_img">
                                 <figure><img src="images/nulat.jpg" alt="Nulat" /></figure>
@@ -218,7 +207,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
                     <a href="lider-avenainstantanea.html" class="product-link">
                         <div class="gallery_item-content">
                             <div class="gallery_img">
@@ -228,7 +217,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="400">
                     <a href="lider-avenamolida.html" class="product-link">
                         <div class="gallery_item-content">
                             <div class="gallery_img">
@@ -238,7 +227,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
                     <a href="lider-avenas.html" class="product-link">
                         <div class="gallery_item-content">
                             <div class="gallery_img">
@@ -248,7 +237,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
                     <a href="lider-cocoaenpolvo.html" class="product-link">
                         <div class="gallery_item-content">
                             <div class="gallery_img">
@@ -258,7 +247,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
                     <a href="renacare.html" class="product-link">
                         <div class="gallery_item-content">
                             <div class="gallery_img">
@@ -268,7 +257,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
                     <a href="lider-lecheenteraenpolvo6.4L.html" class="product-link">
                         <div class="gallery_item-content">
                             <div class="gallery_img">
@@ -278,7 +267,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
                     <a href="lider-lecheenteraenpolvo12L.html" class="product-link">
                         <div class="gallery_item-content">
                             <div class="gallery_img">
@@ -288,7 +277,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
                     <a href="lideravenaintegral.html" class="product-link">
                         <div class="gallery_item-content">
                             <div class="gallery_img">
@@ -298,7 +287,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
                     <a href="lider-avenainstantanea.html" class="product-link">
                         <div class="gallery_item-content">
                             <div class="gallery_img">
@@ -308,7 +297,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
                     <a href="wala-avenainstantanea.html" class="product-link">
                         <div class="gallery_item-content">
                             <div class="gallery_img">
@@ -318,7 +307,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
                     <a href="wala-avenaintegral.html" class="product-link">
                         <div class="gallery_item-content">
                             <div class="gallery_img">
@@ -328,7 +317,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
                     <a href="wala-avenamolida.html" class="product-link">
                         <div class="gallery_item-content">
                             <div class="gallery_img">
@@ -338,7 +327,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
                     <a href="zerca-granolablanco.html" class="product-link">
                         <div class="gallery_item-content">
                             <div class="gallery_img">
@@ -348,7 +337,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
                     <a href="lider-avenainstantanea.html" class="product-link">
                         <div class="gallery_item-content">
                             <div class="gallery_img">
@@ -358,7 +347,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
                     <a href="lider-avenainstantanea.html" class="product-link">
                         <div class="gallery_item-content">
                             <div class="gallery_img">
@@ -368,7 +357,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
                     <a href="wala-lecheenteraenpolvo325g.html" class="product-link">
                         <div class="gallery_item-content">
                             <div class="gallery_img">
@@ -378,7 +367,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
                     <a href="wala-lecheenteraenpolvo2200g.html" class="product-link">
                         <div class="gallery_item-content">
                             <div class="gallery_img">
@@ -388,7 +377,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
                     <a href="wala-pancakesblanco.html" class="product-link">
                         <div class="gallery_item-content">
                             <div class="gallery_img">
@@ -398,7 +387,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
                     <a href="vidalac-adultosblanco.html" class="product-link">
                         <div class="gallery_item-content">
                             <div class="gallery_img">
@@ -408,7 +397,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-4 animate-on-scroll">
+                <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in">
                     <a href="nutricaoblanco.html" class="product-link">
                         <div class="gallery_item-content">
                             <div class="gallery_img">
@@ -423,7 +412,7 @@
     </div>
 
     <footer class="bg-dark text-white pt-5 pb-4">
-        <div class="container animate-on-scroll">
+        <div class="container" data-aos="fade-up" data-aos-delay="200">
             <div class="row">
 
                 <div class="col-md-3 mb-4">
@@ -469,46 +458,16 @@
     <script src="js/jquery-3.0.0.min.js"></script>
     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="js/custom.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Selecciona todos los elementos que quieres animar
-            const targets = document.querySelectorAll('.animate-on-scroll');
-
-            // Configuración del Intersection Observer
-            const observerOptions = {
-                root: null, // usa el viewport como el área de observación
-                rootMargin: '0px',
-                threshold: 0.1 // el callback se ejecuta cuando al menos el 10% del elemento es visible
-            };
-
-            // El callback que se ejecuta cuando un elemento observado entra o sale del viewport
-            const observerCallback = (entries, observer) => {
-                entries.forEach((entry, index) => {
-                    // Si el elemento está intersectando (visible)
-                    if (entry.isIntersecting) {
-                        // Aplicar un retraso escalonado a los items de la galería
-                        if (entry.target.parentElement.parentElement.classList.contains('gallery')) {
-                             // Calcula un retraso basado en el índice del elemento
-                            const delay = index % 3 * 100; // 0ms, 100ms, 200ms, y se repite
-                            entry.target.style.transitionDelay = `${delay}ms`;
-                        }
-                        
-                        entry.target.classList.add('is-visible');
-                        
-                        // Opcional: deja de observar el elemento una vez que ha sido animado
-                        observer.unobserve(entry.target);
-                    }
-                });
-            };
-
-            // Crear una nueva instancia del observer
-            const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-            // Observar cada uno de los elementos seleccionados
-            targets.forEach(target => {
-                observer.observe(target);
-            });
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
         });
     </script>
     </body>
