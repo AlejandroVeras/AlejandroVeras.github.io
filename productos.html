@@ -20,19 +20,6 @@
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        /* Estilo base para los elementos que se animarán al hacer scroll */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        /* Estilo que se aplicará cuando el elemento sea visible */
-        .animate-on-scroll.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
         /* Efecto de aparición escalonada para los productos de la galería */
         .gallery .row .col-md-4 {
              transition-delay: var(--delay, 0s);
@@ -425,7 +412,7 @@
     </div>
 
     <footer class="bg-dark text-white pt-5 pb-4">
-        <div class="container animate-on-scroll">
+        <div class="container" data-aos="fade-up" data-aos-delay="200">
             <div class="row">
 
                 <div class="col-md-3 mb-4">
