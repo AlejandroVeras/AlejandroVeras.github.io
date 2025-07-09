@@ -137,18 +137,18 @@
             </div>
          </div>
       </header>
-      <div class="latest_news">
+      <div class="latest_news" data-aos="fade-up">
          <div class="container">
             <div class="row">
                <div class="col-md-12">
-                  <div class="titlepage">
+                  <div class="titlepage" data-aos="fade-up" data-aos-delay="100">
                      <h2>Múltiples <span class="green">Noticias</span></h2>
                   </div>
                </div>
             </div>
             <!-- Selector de orden -->
             <div class="row">
-               <div class="col-12 d-flex justify-content-end mb-3">
+               <div class="col-12 d-flex justify-content-end mb-3" data-aos="fade-left" data-aos-delay="200">
                   <select id="orderSelect" class="form-select w-auto" style="max-width:220px;">
                      <option value="desc">Más nuevas primero</option>
                      <option value="asc">Más viejas primero</option>
@@ -157,7 +157,7 @@
             </div>
             <div class="row justify-content-center" id="newsGrid">
                <!-- Todas las noticias tienen la clase news_date y formato consistente -->
-               <div class="col-lg-4 col-md-6 mb-4">
+               <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
                   <article class="news_box">
                      <div class="news_img">
                         <figure><img src="images/Noticia1.jpg" alt="Nuestro Gerente General Representa al País en Asamblea de FEPALE"/></figure>
@@ -170,7 +170,7 @@
                      </div>
                   </article>
                </div>
-               <div class="col-lg-4 col-md-6 mb-4">
+               <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
                   <article class="news_box">
                      <div class="news_img">
                         <figure><img src="images/Noticia2.jpg" alt="¡Estamos Certificados! Somos Operador Económico Autorizado"/></figure>
@@ -183,7 +183,7 @@
                      </div>
                   </article>
                </div>
-               <div class="col-lg-4 col-md-6 mb-4">
+               <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
                   <article class="news_box">
                      <div class="news_img">
                         <figure><img src="images/LACTEOS.jpeg" alt="Los Lácteos: Esenciales para tu Salud Diaria"/></figure>
@@ -196,7 +196,7 @@
                      </div>
                   </article>
                </div>
-               <div class="col-lg-4 col-md-6 mb-4">
+               <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
                   <article class="news_box">
                      <div class="news_img">
                         <figure><img src="images/avenaconleche.jpg" alt="Avena con Leche: Tu Dosis Diaria de Bienestar" /></figure>
@@ -209,7 +209,7 @@
                      </div>
                   </article>
                </div>
-               <div class="col-lg-4 col-md-6 mb-4">
+               <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
                   <article class="news_box">
                      <div class="news_img">
                         <figure><img src="images/lacteos.png" alt="Lácteos: Fuente Vital de Salud y Prevención" /></figure>
@@ -222,7 +222,7 @@
                      </div>
                   </article>
                </div>
-               <div class="col-lg-4 col-md-6 mb-4">
+               <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
                   <article class="news_box">
                      <div class="news_img">
                         <figure><img src="images/vasodeleche.jpg" alt="Leche Entera vs. Desnatada: El Mito de las Calorías" /></figure>
@@ -235,7 +235,7 @@
                      </div>
                   </article>
                </div>
-               <div class="col-lg-4 col-md-6 mb-4">
+               <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
                   <article class="news_box">
                      <div class="news_img">
                         <figure><img src="images/lechefortificada.jpeg" alt="Leche Fortificada y sus Beneficios" /></figure>
@@ -248,7 +248,7 @@
                      </div>
                   </article>
                </div>
-               <div class="col-lg-4 col-md-6 mb-4">
+               <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
                   <article class="news_box">
                      <div class="news_img">
                         <figure><img src="images/pasteurizacion.jpg" alt="¿Qué es la Pasteurización?" /></figure>
@@ -261,7 +261,7 @@
                      </div>
                   </article>
                </div>
-               <div class="col-lg-4 col-md-6 mb-4">
+               <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
                   <article class="news_box">
                      <div class="news_img">
                         <figure><img src="images/lecherehidratacionpostejercicio.jpg" alt="La Leche en la Rehidratación Post-Ejercicio" /></figure>
@@ -274,7 +274,7 @@
                      </div>
                   </article>
                </div>
-               <div class="col-lg-4 col-md-6 mb-4">
+               <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
                   <article class="news_box">
                      <div class="news_img">
                         <figure><img src="images/noticiaconaleche.png" alt="Hugo Socorro Impulsa la Transformación Láctea en el Consejo de Conaleche" /></figure>
@@ -332,6 +332,15 @@
       <script src="js/jquery-3.0.0.min.js"></script>
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
+      <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+      <script>
+         AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+         });
+      </script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
       <!-- Script robusto para ordenar noticias -->
       <script>
