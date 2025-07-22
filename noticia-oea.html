@@ -49,17 +49,13 @@
       </div>
    </div>
 
-   <header>
+     <header>
       <div class="header">
          <div class="container">
             <div class="row align-items-center">
                <div class="col-md-3 col-sm-3 logo_section">
-                  <div class="full">
-                     <div class="center-desk">
-                        <div class="logo">
-                           <a href="index.html"><img src="images/logo.png" alt="#" /></a>
-                        </div>
-                     </div>
+                  <div class="logo">
+                     <a href="index.html"><img src="images/logo.png" alt="Logo Empaques Múltiples" /></a>
                   </div>
                </div>
                <div class="col-md-9">
@@ -68,12 +64,18 @@
                         <span class="navbar-toggler-icon"></span>
                      </button>
                      <div class="collapse navbar-collapse" id="navbarsExample04">
-                        <ul class="navbar-nav ml-auto">
+                        <ul class="navbar-nav ml-auto main-menu">
                            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                           <li class="nav-item"><a class="nav-link" href="about.html">Nosotros</a></li>
-                           <li class="nav-item active"><a class="nav-link" href="gallery.html">Noticias</a></li>
+                           <li class="nav-item dropdown megamenu">
+                              <a class="nav-link dropdown-toggle" href="about.html" id="nosotrosDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nosotros</a>
+                              <div class="dropdown-menu" aria-labelledby="nosotrosDropdown">
+                                 <a class="dropdown-item" href="about.html">Sobre Nosotros</a>
+                                 <a class="dropdown-item" href="politicas-seguridad-alimentaria.html">Políticas de Seguridad Alimentaria</a>
+                              </div>
+                           </li>
+                           <li class="nav-item"><a class="nav-link" href="gallery.html">Noticias</a></li>
                            <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
-                           <li class="nav-item"><a class="nav-link" href="contact.html">Contáctanos</a></li>
+                           <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
                            <li class="nav-item"><a class="nav-link" href="empleo.html">Empleos</a></li>
                         </ul>
                      </div>
