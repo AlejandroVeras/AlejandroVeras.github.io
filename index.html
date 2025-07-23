@@ -83,6 +83,27 @@
         .product-link:hover {
             text-decoration: none; /* Asegura que no aparezca subrayado en hover */
         }
+.carousel-img-servicio {
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    max-width: 100%;
+}
+@media (max-width: 767px){
+  .carousel-img-servicio {
+    width: 90vw;
+    height: 38vw;
+    max-width: 100%;
+    max-height: 220px;
+  }
+}
     </style>
     </head>
 <body class="main-layout">
@@ -138,7 +159,13 @@
                               </div>
                            </li>
                            <li class="nav-item"><a class="nav-link" href="gallery.html">Noticias</a></li>
-                           <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+                             <li class="nav-item dropdown megamenu">
+                              <a class="nav-link dropdown-toggle" href="productos.html" id="nosotrosDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos</a>
+                              <div class="dropdown-menu" aria-labelledby="nosotrosDropdown">
+                                 <a class="dropdown-item" href="productos.html">Nuestros Productos</a>
+                                 <a class="dropdown-item" href="productos-terceros.html">Servicio de Empaques</a>
+                              </div>
+                           </li>
                            <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
                            <li class="nav-item"><a class="nav-link" href="empleo.html">Empleos</a></li>
                         </ul>
@@ -321,78 +348,78 @@
             </div>
         </div>
     </div>
-    <div class="design w-100 animate-on-scroll">
-        <div id="design" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#design" data-slide-to="0" class="active"></li>
-                <li data-target="#design" data-slide-to="1"></li>
-                <li data-target="#design" data-slide-to="2"></li>
-            </ol>
-
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row no-gutters align-items-center" style="min-height: auto;">
-                        <div class="col-md-6 p-5">
-                            <div class="text_de">
-                                <div class="titlepage">
-                                    <h2>Servicio de <span class="green">Empaques</span></h2>
-                                </div>
-                                <p>Industria de Empaques Múltiples, S.R.L. ofrece servicio de empaque a clientes institucionales y grandes cadenas de supermercados para sus marcas privadas, cumpliendo con altos estándares internacionales.</p>
-                                <p>Ofrecemos servicio de empaque para productos comestibles como leche en polvo, avena, harinas, granería en general (arroz, frijoles, azúcar).</p>
+ <div class="design w-100 animate-on-scroll">
+    <div id="design" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#design" data-slide-to="0" class="active"></li>
+            <li data-target="#design" data-slide-to="1"></li>
+            <li data-target="#design" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <!-- Slide 1: Servicio de Empaques -->
+            <div class="carousel-item active">
+                <div class="row no-gutters align-items-center" style="min-height: auto;">
+                    <div class="col-md-6 p-5">
+                        <div class="text_de">
+                            <div class="titlepage">
+                                <h2>Servicio de <span class="green">Empaques</span></h2>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <img src="images/produccion1.jpg" alt="Producción 1" class="img-fluid w-55 h-55" style="object-fit: cover;" />
+                            <p>Industria de Empaques Múltiples, S.R.L. ofrece servicio de empaque a clientes institucionales y grandes cadenas de supermercados para sus marcas privadas, cumpliendo con altos estándares internacionales.</p>
+                            <p>Ofrecemos servicio de empaque para productos comestibles como leche en polvo, avena, harinas, granería en general (arroz, frijoles, azúcar).</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="row no-gutters align-items-center" style="min-height: auto;">
-                        <div class="col-md-6 p-5">
-                            <div class="text_de">
-                                <div class="titlepage">
-                                    <h2>Preparado Lácteo <span class="green">Vital</span></h2>
-                                </div>
-                                <p>Leche en polvo formulada con ingredientes funcionales combinando nutrición, sabor y economía.</p>
-                                <p>Sacos de 25 lbs.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <img src="images/LEC_2356.webp" alt="Producción 2" class="img-fluid w-55 h-55" style="object-fit: cover;" />
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="row no-gutters align-items-center" style="min-height: auto;">
-                        <div class="col-md-6 p-5">
-                            <div class="text_de">
-                                <div class="titlepage">
-                                    <h2>Cereal Lacteado <span class="green">Fortificado Vidalac</span></h2>
-                                </div>
-                                <p>El cereal lacteado fortificado Vidalac es un alimento especialmente destinado a la preparación rápida de desayunos, meriendas, papillas, pancakes; de alto valor nutritivo y excelente digestibilidad. Es un fortificante adecuado para niños mayores de 2 años, adolescentes, convalecientes y ancianos.</p>
-                                <p>Presentaciones en tres sabores: Canela y Especias, Chocolate y Coco. 200 g., 1000 g. y 5lb.</p>
-                                <p><strong>USO:</strong> Ideal para desayunos y meriendas, de fácil preparación y de alto contenido nutricional.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <img src="images/LEC_2309.webp" alt="Producción 3" class="img-fluid w-55 h-55" style="object-fit: cover;" />
-                        </div>
+                    <div class="col-md-6 d-flex align-items-center justify-content-center">
+                        <img src="images/produccion1.jpg" alt="Servicio de Empaques" class="img-fluid carousel-img-servicio" />
                     </div>
                 </div>
             </div>
-
-            <a class="carousel-control-prev" href="#design" role="button" data-slide="prev">
-                <i class="fa fa-angle-left" aria-hidden="true"></i>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#design" role="button" data-slide="next">
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                <span class="sr-only">Next</span>
-            </a>
+            <!-- Slide 2: Cereal Lactado Vidalac -->
+            <div class="carousel-item">
+                <div class="row no-gutters align-items-center" style="min-height: auto;">
+                    <div class="col-md-6 p-5">
+                        <div class="text_de">
+                            <div class="titlepage">
+                                <h2>Cereal Lactado <span class="green">Vidalac</span></h2>
+                            </div>
+                            <p>El cereal lacteado fortificado Vidalac es un alimento especialmente destinado a la preparación rápida de desayunos, meriendas, papillas, pancakes; de alto valor nutritivo y excelente digestibilidad. Es un fortificante adecuado para niños mayores de 2 años, adolescentes, convalecientes y ancianos.</p>
+                            <p>Presentaciones en tres sabores: Canela y Especias, Chocolate y Coco. 200 g., 1000 g. y 5lb.</p>
+                            <p><strong>USO:</strong> Ideal para desayunos y meriendas, de fácil preparación y de alto contenido nutricional.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex align-items-center justify-content-center">
+                        <img src="images/LEC_2309.webp" alt="Cereal Lactado Vidalac" class="img-fluid carousel-img-servicio" />
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3: Vital -->
+            <div class="carousel-item">
+                <div class="row no-gutters align-items-center" style="min-height: auto;">
+                    <div class="col-md-6 p-5">
+                        <div class="text_de">
+                            <div class="titlepage">
+                                <h2>Preparado Lácteo <span class="green">Vital</span></h2>
+                            </div>
+                            <p>Leche en polvo formulada con ingredientes funcionales combinando nutrición, sabor y economía.</p>
+                            <p>Sacos de 25 lbs.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex align-items-center justify-content-center">
+                        <img src="images/LEC_2356.webp" alt="Vital" class="img-fluid carousel-img-servicio" />
+                    </div>
+                </div>
+            </div>
         </div>
+        <a class="carousel-control-prev" href="#design" role="button" data-slide="prev">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#design" role="button" data-slide="next">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            <span class="sr-only">Siguiente</span>
+        </a>
     </div>
+</div>
+
     <div class="video-section">
     <div id="video" class=".video-section">
         <div class="container">
@@ -409,8 +436,8 @@
                     <div class="video-container">
                         <div class="embed-responsive embed-responsive-16by9">
                             <video class="embed-responsive-item" controls poster="images/fotoportadavideo.png">
-                                <source src="videos/videorecetacereallactadovidalac .mp4" type="video/mp4">
-                                <source src="videos/videorecetacereallactadovidalac .webm" type="video/webm">
+                                <source src="videos/HARINA.mp4" type="video/mp4">
+                                <source src="videos/HARINA.webm" type="video/webm">
                                 Tu navegador no soporta el elemento de video.
                             </video>
                         </div>
