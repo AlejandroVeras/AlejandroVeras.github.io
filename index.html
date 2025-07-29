@@ -163,21 +163,7 @@
   margin-bottom: 0.2rem;
   text-shadow: 0 2px 10px rgba(0,0,0,0.18);
 }
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: #116835;
-  border-radius: 50%;
-  width: 2.8rem;
-  height: 2.8rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.22);
-}
-.carousel-indicators li {
-  background-color: #116835;
-  width: 18px;
-  height: 7px;
-  border-radius: 5px;
-  margin: 0 3px;
-}
+
 .carousel-indicators .active {
   background-color: #fff;
 }
@@ -254,6 +240,37 @@
   .slide2-divider { width: 40vw; height: 2.5px; }
   .slide2-caption { top: 13%; }
 }
+
+/* CENTRAR SOLO EL TEXTO DEL BANNER PRINCIPAL (NO AFECTA OTROS CAROUSELES) */
+
+.banner_main .carousel-caption,
+.banner_main .modern-caption,
+.banner_main .slide2-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 7vw;
+  z-index: 5;
+  background: none;
+}
+
+/* Centrar los títulos y subtítulos dentro del banner principal */
+.banner_main .banner-title,
+.banner_main .banner-subtitle,
+.banner_main .slide2-title,
+.banner_main .slide2-title-main,
+.banner_main .slide2-desc {
+  text-align: center;
+  width: 100%;
+}
+
 </style>
     </style>
     </head>
@@ -337,7 +354,7 @@
                     <img src="images/BANNER1 FONDO.png" class="d-block w-100 banner-img" alt="Banner 1">
 <div class="carousel-caption modern-caption">
           <h1 class="banner-title">Fábrica de Alimentos Lácteos</span></h1>
-                        <p class="banner-subtitle">Funcionales y naturales de máxima calidad y valor agregado, enfocados en la nutrición y salud.</p>
+                        <p class="banner-subtitle">Funcionales y naturales de máxima calidad y valor agregado, enfocados en la nutrición y salud</p>
                     </div>
                 </div>
 <div class="carousel-item">
@@ -367,7 +384,7 @@
                     <img src="images/empaquesmultiplesfrente2.jpg" class="d-block w-100 banner-img" alt="Banner 5">
 <div class="carousel-caption modern-caption">
           <h1 class="banner-title">Empaques Múltiples</span></h1>
-                        <p class="banner-subtitle">Fábrica de Alimentos Lácteos Funcionales y Naturales de Máxima Calidad y Valor Agregado.</p>
+                        <p class="banner-subtitle">Fábrica de Alimentos Lácteos Funcionales y Naturales de Máxima Calidad y Valor Agregado, Enfocados en La Nutrición y Salud.</p>
                     </div>
                 </div>
             </div>
