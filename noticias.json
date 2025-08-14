@@ -1,31 +1,10 @@
 [
   {
-    "titulo": "Leche Fortificada: Nutrición para Todos",
-    "fecha": "2025-06-29",
-    "imagen": "images/lechefortificada.jpeg",
-    "resumen": "La leche fortificada ayuda a combatir deficiencias nutricionales. Su consumo es recomendado por la OMS, especialmente para niños y adultos mayores.",
-    "link": "noticia-lechefortificada.html"
-  },
-  {
-    "titulo": "Avena con Leche: Tu Dosis Diaria de Bienestar",
-    "fecha": "2025-06-25",
-    "imagen": "images/avenaconleche.jpg",
-    "resumen": "La combinación de avena y leche es un potente superalimento que aporta fibra, antioxidantes, proteínas y calcio esenciales para una vida saludable.",
-    "link": "noticia-avena-leche.html"
-  },
-  {
     "titulo": "Rehidratación Post-Ejercicio: El Papel de la Leche",
     "fecha": "2025-05-20",
     "imagen": "images/lecherehidratacionpostejercicio.jpg",
     "resumen": "La leche, por su contenido de agua y electrolitos, es excelente para la recuperación tras el ejercicio. Sus nutrientes ayudan a la absorción óptima y prevención de lesiones.",
     "link": "noticia-rehidratacion-postejercicio.html"
-  },
-  {
-    "titulo": "Leche Entera vs. Desnatada: El Mito de las Calorías",
-    "fecha": "2024-05-10",
-    "imagen": "images/vasodeleche.jpg",
-    "resumen": "Descubre las diferencias entre la leche entera y desnatada, y cómo elegir la mejor opción según tus necesidades y preferencias.",
-    "link": "noticia-leche-entera-vs-desnatada.html"
   },
   {
     "titulo": "Lácteos: Fuente Vital de Salud y Prevención",
