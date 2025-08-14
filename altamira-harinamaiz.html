@@ -27,10 +27,11 @@
       .recipes h4{font-size:.95rem;font-weight:700;margin-top:18px}
       .recipes ol{margin-bottom:4px;padding-left:18px}
       .recipes ol li{margin-bottom:4px}
-      .grid-claims{display:flex;flex-wrap:wrap;gap:14px;margin:26px 0}
-      .claim{flex:1 1 140px;min-width:130px;background:#fff;border:1px solid #e3ece5;border-radius:8px;padding:14px 16px;text-align:center;box-shadow:0 2px 4px rgba(0,0,0,0.04)}
-      .claim h5{font-size:1rem;font-weight:700;margin:0 0 4px;color:#116835}
-      .claim p{font-size:.7rem;line-height:1.2;margin:0}
+      .claims-grid{display:flex;flex-wrap:wrap;gap:16px;margin:26px 0 8px}
+      .claim{flex:1 1 130px;min-width:130px;background:#fff;border:1px solid #dce9e2;border-radius:12px;padding:16px 14px;text-align:center;box-shadow:0 3px 10px -4px rgba(0,0,0,.06);position:relative;overflow:hidden}
+      .claim:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 28% 30%,rgba(17,104,53,.12),transparent 70%);opacity:.9;pointer-events:none}
+      .claim h5{font-size:1rem;font-weight:700;margin:0 0 6px;color:#116835}
+      .claim p{font-size:.65rem;line-height:1.15;margin:0;color:#333;letter-spacing:.4px}
       .ingredients-list li{margin-bottom:4px}
       .usage-list li{margin-bottom:4px}
       .anchor-back{display:inline-block;margin-top:18px}
@@ -170,7 +171,7 @@
                      <p><strong>Descripción:</strong><br>
                         Altamira es una harina de maíz formulada y fortificada, lista para preparar una gran variedad de platos y postres típicos dominicanos manteniendo sabor y textura consistentes.</p>
 
-                     <div class="grid-claims">
+                     <div class="claims-grid">
                         <div class="claim">
                            <h5>Versátil</h5>
                            <p>Arepas • Majarete • Arepitas</p>

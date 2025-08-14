@@ -22,9 +22,11 @@
       .product-highlight{font-size:2.05em;color:#116835;font-weight:800;letter-spacing:1px;text-transform:uppercase;text-align:center;margin:10px 0 20px;line-height:1.1;border-bottom:2.5px solid #116835;display:inline-block;padding-bottom:8px;text-shadow:0 2px 6px rgba(0,0,0,.08)}
       .section-subtitle{font-weight:700;color:#252525;margin:32px 0 14px}
       .claim-box{background:#f5f9f6;border:1px solid #d8e8dd;border-radius:10px;padding:18px 20px;margin:30px 0;display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between}
-      .claim{flex:1 1 150px;min-width:140px;background:#fff;border:1px solid #e3ece5;border-radius:8px;padding:14px 16px;text-align:center;box-shadow:0 2px 4px rgba(0,0,0,.04)}
-      .claim h4{font-size:1.1rem;font-weight:700;margin:0 0 4px;color:#116835}
-      .claim p{font-size:.78rem;line-height:1.25;margin:0;color:#333}
+      .claims-grid{display:flex;flex-wrap:wrap;gap:16px;margin:26px 0 8px}
+      .claim{flex:1 1 130px;min-width:130px;background:#fff;border:1px solid #dce9e2;border-radius:12px;padding:16px 14px;text-align:center;box-shadow:0 3px 10px -4px rgba(0,0,0,.06);position:relative;overflow:hidden}
+      .claim:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 28% 30%,rgba(17,104,53,.12),transparent 70%);opacity:.9;pointer-events:none}
+      .claim h5{font-size:1rem;font-weight:700;margin:0 0 6px;color:#116835}
+      .claim p{font-size:.65rem;line-height:1.15;margin:0;color:#333;letter-spacing:.4px}
       table.table-sm td,table.table-sm th{padding:.45rem .6rem;font-size:.82rem;vertical-align:middle}
       .panel-box{background:#f8f9fa;border:1px solid #e5e8ea;border-radius:8px;padding:16px 18px;margin-bottom:26px}
       .small-note{font-size:.7rem;line-height:1.15;color:#666}
@@ -113,21 +115,21 @@
                      <p><strong>Descripción:</strong><br>
                         Kratos Mass Protein es un suplemento en polvo sabor Chocolate orientado a apoyar el aumento de masa corporal y la recuperación energética. Combina proteínas lácteas (MPC + WPC) con una matriz de carbohidratos (maltodextrina, avena y azúcar) más grasas de palma para aportar calorías y macronutrientes que favorecen el superávit calórico controlado y la construcción muscular.</p>
 
-                     <div class="claim-box">
+                     <div class="claims-grid">
                         <div class="claim">
-                           <h4>15 g</h4>
+                           <h5>15 g</h5>
                            <p>Proteína<br>por porción</p>
                         </div>
                         <div class="claim">
-                           <h4>4 g</h4>
+                           <h5>4 g</h5>
                            <p>BCAA (estim.)<br>Soporte anabólico</p>
                         </div>
                         <div class="claim">
-                           <h4>190</h4>
+                           <h5>190</h5>
                            <p>Calorías<br>por porción</p>
                         </div>
                         <div class="claim">
-                           <h4>5</h4>
+                           <h5>5</h5>
                            <p>Porciones<br>por envase*</p>
                         </div>
                      </div>

@@ -37,14 +37,11 @@
          border-radius:10px;padding:18px 20px;margin:30px 0;
          display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;
       }
-      .claim{
-         flex:1 1 160px;min-width:140px;
-         background:#fff;border:1px solid #e3ece5;border-radius:8px;
-         padding:14px 16px;text-align:center;
-         box-shadow:0 2px 4px rgba(0,0,0,0.04);
-      }
-      .claim h4{font-size:1.1rem;font-weight:700;margin:0 0 4px;color:#116835;}
-      .claim p{font-size:.78rem;line-height:1.25;margin:0;color:#333;}
+      .claims-grid{display:flex;flex-wrap:wrap;gap:16px;margin:26px 0 8px}
+      .claim{flex:1 1 130px;min-width:130px;background:#fff;border:1px solid #dce9e2;border-radius:12px;padding:16px 14px;text-align:center;box-shadow:0 3px 10px -4px rgba(0,0,0,.06);position:relative;overflow:hidden}
+      .claim:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 28% 30%,rgba(17,104,53,.12),transparent 70%);opacity:.9;pointer-events:none}
+      .claim h5{font-size:1rem;font-weight:700;margin:0 0 6px;color:#116835}
+      .claim p{font-size:.65rem;line-height:1.15;margin:0;color:#333;letter-spacing:.4px}
       .badge-mini{
          background:#116835;color:#fff;font-size:.55rem;
          padding:3px 6px;border-radius:4px;letter-spacing:.5px;
@@ -169,21 +166,21 @@
                      <p><strong>Descripción:</strong><br>
                         Kratos Whey Protein es un suplemento en polvo a base de proteínas lácteas (suero y leche) sabor Chocolate, formulado para apoyar el desarrollo y mantenimiento de la masa muscular, facilitar la recuperación post‑entrenamiento y aportar aminoácidos esenciales y BCAA.</p>
 
-                     <div class="claim-box">
+                     <div class="claims-grid">
                         <div class="claim">
-                           <h4>20 g</h4>
+                           <h5>20 g</h5>
                            <p>Proteína por porción<br>Apoya a construir y mantener músculo.</p>
                         </div>
                         <div class="claim">
-                           <h4>6 g</h4>
+                           <h5>6 g</h5>
                            <p>BCAA por porción<br>Resistencia y recuperación muscular.</p>
                         </div>
                         <div class="claim">
-                           <h4>14</h4>
+                           <h5>14</h5>
                            <p>Porciones aprox.<br>Por envase (454 g).</p>
                         </div>
                         <div class="claim">
-                           <h4>100%</h4>
+                           <h5>100%</h5>
                            <p>Proteínas lácteas<br>WPC + MPC.</p>
                         </div>
                      </div>
