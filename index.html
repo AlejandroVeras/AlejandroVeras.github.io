@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <title>Empaques Múltiples</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
@@ -34,7 +35,9 @@
         }
 
         .gallery_img {
-            /* Responsive sizing handled by responsive.css */
+            /* Modificaciones para asegurar 360x360 y evitar el corte */
+            width: 360px; 
+            height: 360px; 
             overflow: hidden;
             display: flex;
             justify-content: center;
@@ -389,8 +392,56 @@
   display: block !important;
   opacity: 1 !important;
 }
+ /* Fix centrado "Empaques Múltiples" */
+  /* Centra el bloque .about_img (tiene max-width, por eso había que centrar el contenedor, no solo el <img>) */
+  #about .about_img {
+    margin: 0 auto !important;
+    /* opcional: si quieres eliminar padding para que quede más ajustado */
+    /* padding: 0 !important; */
+  }
 
+  /* Quita el fondo decorativo si te descoloca visualmente */
+  #about .about_img::before {
+    display: none !important;
+  }
+
+  /* Anula el desplazamiento del <img> que viene de css/style.css */
+  #about .about_img figure { margin: 0 !important; }
+  #about .about_img figure img.img-about-fix {
+    display: block !important;
+    margin: 0 auto !important;
+    position: static !important;
+    top: auto !important;
+    width: auto !important;
+    max-width: 75% !important;
+    height: auto !important;
+  }
+  /* FIX: Centrado perfecto del texto del banner */
+  .banner_main .carousel-caption,
+  .banner_main .modern-caption,
+  .banner_main .slide2-caption {
+    /* ocupar todo el ancho y neutralizar anchos/márgenes previos */
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+
+    /* padding simétrico para que no se desplace */
+    padding-left: clamp(16px, 5vw, 60px) !important;
+    padding-right: clamp(16px, 5vw, 60px) !important;
+
+    /* centrar contenido */
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 6 !important; /* por encima del overlay */
+  }
 </style>
+    </style>
     </head>
 <body class="main-layout">
     <div class="loader_bg">
@@ -430,7 +481,7 @@
                   </div>
                </div>
                <div class="col-md-9">
-                  <nav class="navigation navbar navbar-expand-lg navbar-dark d-flex align-items-center">
+                  <nav class="navigation navbar navbar-expand-md navbar-dark d-flex align-items-center">
                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                      </button>
@@ -494,7 +545,7 @@
                 <div class="carousel-item">
                     <img src="images/banner3.png" class="d-block w-100 banner-img-modern" alt="Banner 4">
 <div class="carousel-caption modern-caption">
-          <h1 class="banner-title">Nos Esmeramos En El Más Estricto</h1>
+          <h1 class="banner-title">Nos Esmeramos En El Más Estricto</span></h1>
                         <p class="banner-subtitle">Control de Cada Uno de Nuestros Insumos.</p>
                     </div>
                 </div>
@@ -522,11 +573,13 @@
                         <a class="read_more " href="about.html"> Leer Más</a>
                     </div>
                 </div>
-                <div class="col-md-7">
-                    <div class="about_img">
-                        <figure><img src="images/variedadproductos.jpg" alt="#" /></figure>
-                    </div>
-                </div>
+<div class="col-md-7 d-flex justify-content-center">
+  <div class="about_img">
+    <figure>
+      <img src="images/variedadproductos.jpg" alt="Variedad de productos" class="img-about-fix">
+    </figure>
+  </div>
+</div>
             </div>
         </div>
     </div>
