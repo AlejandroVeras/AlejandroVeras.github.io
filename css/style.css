@@ -474,7 +474,8 @@ button {
 
 .about {
      background-color: #fff;
-     padding-top: 95px;
+     padding-top: 50px;
+     padding-bottom: 50px;
 }
 
 .about .titlepage {
