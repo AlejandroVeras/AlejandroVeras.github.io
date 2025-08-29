@@ -62,6 +62,13 @@
          color: #252525;
          margin-bottom: 12px;
       }
+      .info-box{background:#f8f9fa;border:1px solid #e5e8ea;border-radius:10px;padding:18px 20px;margin-bottom:24px}
+      .ingredients-list li,.usage-list li{margin-bottom:4px;font-size:.85rem}
+      .tag-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+      .tag-badge{background:#e9f4ef;color:#116835;border:1px solid #cfe6da;font-weight:600;border-radius:22px;padding:6px 14px 6px 12px;font-size:.62rem;letter-spacing:.5px;line-height:1;display:inline-flex;align-items:center;gap:6px;box-shadow:0 1px 2px rgba(0,0,0,.04);white-space:nowrap}
+      .tag-badge i{font-size:.65rem;opacity:.7}
+      .prep-illu{display:flex;align-items:center;gap:14px;margin:10px 0 18px;font-size:.75rem;color:#444}
+      .prep-illu .step-icon{flex:0 0 52px;height:52px;border:2px solid #116835;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#116835;font-size:.9rem;background:#fff}
    </style>
 </head>
 <body class="main-layout in_page">
@@ -176,13 +183,30 @@
                               <p class="mb-2"><strong>País de origen:</strong> República Dominicana</p>
                            </div>
 
-                           <h3 class="section-subtitle mt-4">Preparación</h3>
-                           <ol class="mb-0">
-                              <li>Mezcle el contenido de un sobre de 200 g en una olla de aluminio con 3/4 litro de agua potable.</li>
-                              <li>Remover constantemente a fuego lento.</li>
-                              <li>Cocinar hasta espesar al gusto (3 a 5 minutos aprox.).</li>
-                              <li>Apagar la llama y servir.</li>
-                           </ol>
+                           <div class="info-box">
+                              <h3 class="section-subtitle" style="margin-top:0;">Preparación</h3>
+                              <div class="prep-illu">
+                                 <div class="step-icon">1</div>
+                                 <div><strong>Mezclar:</strong> Mezcle el contenido de un sobre de 200 g en una olla de aluminio con 3/4 litro de agua potable.</div>
+                              </div>
+                              <div class="prep-illu">
+                                 <div class="step-icon">2</div>
+                                 <div><strong>Remover:</strong> Remover constantemente a fuego lento.</div>
+                              </div>
+                              <div class="prep-illu">
+                                 <div class="step-icon">3</div>
+                                 <div><strong>Cocinar:</strong> Cocinar hasta espesar al gusto (3 a 5 minutos aprox.).</div>
+                              </div>
+                              <div class="prep-illu">
+                                 <div class="step-icon">4</div>
+                                 <div><strong>Servir:</strong> Apagar la llama y servir.</div>
+                              </div>
+                              <div class="tag-list">
+                                 <span class="tag-badge"><i class="fa fa-circle"></i> 200 g por sobre</span>
+                                 <span class="tag-badge"><i class="fa fa-circle"></i> 3-5 minutos</span>
+                                 <span class="tag-badge"><i class="fa fa-circle"></i> Fuego lento</span>
+                              </div>
+                           </div>
                         </div>
 
                         <div class="col-md-6">
