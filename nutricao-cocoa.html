@@ -30,6 +30,13 @@
       .section-subtitle{font-weight:700;color:#252525;margin:28px 0 12px}
       .lead-desc{font-size:.95rem;line-height:1.5}
       .small-note{font-size:.8rem;color:#666}
+      .info-box{background:#f8f9fa;border:1px solid #e5e8ea;border-radius:10px;padding:18px 20px;margin-bottom:24px}
+      .ingredients-list li,.usage-list li{margin-bottom:4px;font-size:.85rem}
+      .tag-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+      .tag-badge{background:#e9f4ef;color:#116835;border:1px solid #cfe6da;font-weight:600;border-radius:22px;padding:6px 14px 6px 12px;font-size:.62rem;letter-spacing:.5px;line-height:1;display:inline-flex;align-items:center;gap:6px;box-shadow:0 1px 2px rgba(0,0,0,.04);white-space:nowrap}
+      .tag-badge i{font-size:.65rem;opacity:.7}
+      .prep-illu{display:flex;align-items:center;gap:14px;margin:10px 0 18px;font-size:.75rem;color:#444}
+      .prep-illu .step-icon{flex:0 0 52px;height:52px;border:2px solid #116835;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#116835;font-size:.9rem;background:#fff}
       @media (max-width:480px){.gallery_img-producto{width:100%;max-width:100%;height:auto;aspect-ratio:1/1}}
    </style>
 </head>
@@ -153,19 +160,41 @@
                               <li><strong>Amarga 25 lb:</strong> Cocoa alcalinizada, Maltodextrina (texturizante).</li>
                            </ul>
 
-                           <h3 class="section-subtitle">Preparación</h3>
-                           <p class="mb-2"><strong>Dulce 200 g (hogar):</strong></p>
-                           <ol class="mb-3">
-                              <li>Disuelva dos cucharadas en un vaso de leche y remueva vigorosamente.</li>
-                           </ol>
+                           <div class="info-box">
+                              <h3 class="section-subtitle" style="margin-top:0;">Preparación</h3>
+                              <h4 style="font-size:.9rem;font-weight:700;margin-bottom:6px;">Dulce 200 g (hogar):</h4>
+                              <div class="prep-illu">
+                                 <div class="step-icon">1</div>
+                                 <div><strong>Disolver:</strong> Disuelva dos cucharadas en un vaso de leche y remueva vigorosamente.</div>
+                              </div>
+                              <div class="tag-list">
+                                 <span class="tag-badge"><i class="fa fa-circle"></i> 2 cucharadas</span>
+                                 <span class="tag-badge"><i class="fa fa-circle"></i> 1 vaso de leche</span>
+                              </div>
 
-                           <p class="mb-2"><strong>Dulce 25 lb (institucional):</strong></p>
-                           <ol class="mb-3">
-                              <li>Servir 1 vaso (≈200 ml) de leche fría o caliente (≤60 °C).</li>
-                              <li>Agregar 2 cucharadas rasas (≈25 g) de Nutricao.</li>
-                              <li>Mezclar vigorosamente hasta disolver por completo.</li>
-                              <li>Endulzar o ajustar intensidad de cocoa al gusto (opcional).</li>
-                           </ol>
+                              <h4 style="font-size:.9rem;font-weight:700;margin:18px 0 6px;">Dulce 25 lb (institucional):</h4>
+                              <div class="prep-illu">
+                                 <div class="step-icon">1</div>
+                                 <div><strong>Servir:</strong> Servir 1 vaso (≈200 ml) de leche fría o caliente (≤60 °C).</div>
+                              </div>
+                              <div class="prep-illu">
+                                 <div class="step-icon">2</div>
+                                 <div><strong>Agregar:</strong> Agregar 2 cucharadas rasas (≈25 g) de Nutricao.</div>
+                              </div>
+                              <div class="prep-illu">
+                                 <div class="step-icon">3</div>
+                                 <div><strong>Mezclar:</strong> Mezclar vigorosamente hasta disolver por completo.</div>
+                              </div>
+                              <div class="prep-illu">
+                                 <div class="step-icon">4</div>
+                                 <div><strong>Ajustar:</strong> Endulzar o ajustar intensidad de cocoa al gusto (opcional).</div>
+                              </div>
+                              <div class="tag-list">
+                                 <span class="tag-badge"><i class="fa fa-circle"></i> 25 g por vaso</span>
+                                 <span class="tag-badge"><i class="fa fa-circle"></i> Leche ≤60°C</span>
+                                 <span class="tag-badge"><i class="fa fa-circle"></i> Mezclar bien</span>
+                              </div>
+                           </div>
 
                            <h3 class="section-subtitle">Conservación (presentación 25 lb)</h3>
                            <p class="small-note mb-3">
